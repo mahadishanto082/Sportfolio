@@ -2,7 +2,12 @@
     <nav class="navbar navbar-expand-xl">
         <div class="navbar-container">
             <div class="logo-container">
-                <a class="navbar-brand" href="./index.html"><img src="./image/marko-logo.png" class="site-logo img-fluid"></a>
+                <a class="navbar-brand" >
+             
+                 <img src="{{ asset('image/Sportfolio.jpg') }}" class="site-logo img-fluid" alt="Logo">
+              </a>
+
+                </a>
             </div>
             <button class="navbar-toggler nav-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
