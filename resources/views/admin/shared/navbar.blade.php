@@ -19,7 +19,7 @@
 
    <!-- Main Page -->
 <li class="br-menu-item">
-  <a href="{{ route('admin.main-page.index') }}"
+  <a href="#"
      class="br-menu-link {{ Request::routeIs('admin.main-page*') ? 'active' : '' }}">
     <i class="menu-item-icon icon ion-ios-paper-outline tx-24"></i>
     <span class="menu-item-label">Main Page</span>
@@ -35,8 +35,8 @@
         <span class="menu-item-label">Services</span>
       </a>
       <ul class="br-menu-sub">
-        <li class="sub-item"><a href="{{ route('admin.services.index') }}" class="sub-link">List</a></li>
-        <li class="sub-item"><a href="{{ route('admin.services.create') }}" class="sub-link">Add New</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">List</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">Add New</a></li>
       </ul>
     </li>
 
@@ -48,8 +48,8 @@
         <span class="menu-item-label">About Us</span>
       </a>
       <ul class="br-menu-sub">
-        <li class="sub-item"><a href="{{ route('admin.about.index') }}" class="sub-link">List</a></li>
-        <li class="sub-item"><a href="{{ route('admin.about.create') }}" class="sub-link">Add New</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">List</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">Add New</a></li>
       </ul>
     </li>
 
@@ -61,8 +61,8 @@
         <span class="menu-item-label">Portfolio</span>
       </a>
       <ul class="br-menu-sub">
-        <li class="sub-item"><a href="{{ route('admin.portfolio.index') }}" class="sub-link">List</a></li>
-        <li class="sub-item"><a href="{{ route('admin.portfolio.create') }}" class="sub-link">Add New</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">List</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">Add New</a></li>
       </ul>
     </li>
 
@@ -74,8 +74,8 @@
         <span class="menu-item-label">Technologies</span>
       </a>
       <ul class="br-menu-sub">
-        <li class="sub-item"><a href="{{ route('admin.tech.index') }}" class="sub-link">List</a></li>
-        <li class="sub-item"><a href="{{ route('admin.tech.create') }}" class="sub-link">Add New</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">List</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">Add New</a></li>
       </ul>
     </li>
 
@@ -83,31 +83,20 @@
     <li class="br-menu-item">
       <a href="#"
          class="br-menu-link {{
-            Request::routeIs('admin.header-content*') ||
-            Request::routeIs('admin.dropdown*') ||
-            Request::routeIs('admin.dropdown-info*')
+            Request::routeIs('admin.header-content*') 
               ? 'active' : '' }}">
         <i class="menu-item-icon icon ion-ios-options-outline tx-24"></i>
         <span class="menu-item-label">Header</span>
       </a>
       <ul class="br-menu-sub">
         <!-- Content -->
-        <li class="sub-item"><a href="{{ route('admin.header-content.index') }}" class="sub-link">Content — List</a></li>
-        <li class="sub-item"><a href="{{ route('admin.header-content.create') }}" class="sub-link">Content — Add</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">Content — List</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">Content — Add</a></li>
 
-        <!-- Dropdown Button -->
-        <li class="sub-item"><a href="{{ route('admin.dropdown.index') }}" class="sub-link">Dropdown — List</a></li>
-        <li class="sub-item"><a href="{{ route('admin.dropdown.create') }}" class="sub-link">Dropdown — Add</a></li>
-
-        <!-- Dropdown Info -->
-        <li class="sub-item"><a href="{{ route('admin.dropdown-info.index') }}" class="sub-link">Dropdown Info — List</a></li>
-        <li class="sub-item"><a href="{{ route('admin.dropdown-info.create') }}" class="sub-link">Dropdown Info — Add</a></li>
-      </ul>
-    </li>
-
+       
     <!-- Messages -->
     <li class="br-menu-item">
-      <a href="{{ route('admin.contact-message.index') }}"
+      <a href="#"
          class="br-menu-link {{ Request::routeIs('admin.contact-message*') ? 'active' : '' }}">
         <i class="menu-item-icon icon ion-ios-mail-outline tx-24"></i>
         <span class="menu-item-label">Messages</span>
@@ -122,8 +111,8 @@
         <span class="menu-item-label">Footer</span>
       </a>
       <ul class="br-menu-sub">
-        <li class="sub-item"><a href="{{ route('admin.contact.index') }}" class="sub-link">List</a></li>
-        <li class="sub-item"><a href="{{ route('admin.contact.create') }}" class="sub-link">Add</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">List</a></li>
+        <li class="sub-item"><a href="#" class="sub-link">Add</a></li>
       </ul>
     </li>
 

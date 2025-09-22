@@ -24,15 +24,16 @@
             <span class="tx-normal">[</span> Admin <span class="tx-info">Login</span> <span class="tx-normal">]</span>
         </div>
 
-        <form action="{{ route('admin.login') }}" method="post">
+        <form action="{{ route('admin.login.submit') }}" method="post">
             @csrf
 
             <div class="form-group">
-                <input type="text" name="email" class="form-control" placeholder="Enter your email">
-                @error('email')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
+    <input type="text" name="email" class="form-control" placeholder="Enter email or mobile">
+    @error('email')
+    <small class="text-danger">{{ $message }}</small>
+    @enderror
+</div>
+
 
             <div class="form-group">
                 <input type="password" name="password" class="form-control" placeholder="Enter your password">
