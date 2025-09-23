@@ -4,28 +4,21 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateHeaderContentsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('header_contents', function (Blueprint $table) {
             $table->id();
-            $table->string('logo')->nullable(); // logo file path
-            $table->string('emergency_contact')->nullable(); // stores button_name as emergency_contact
-            $table->json('nav_links')->nullable(); // optional: future use for menus
+            $table->string('logo')->nullable();
             $table->enum('status', ['Active', 'Inactive'])->default('Active');
+            $table->json('buttons')->nullable(); // Stores button names & links as JSON
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('header_contents');
     }
-};
+}

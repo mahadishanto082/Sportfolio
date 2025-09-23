@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
+use App\Models\HeaderContent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +23,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Paginator::useBootstrap();
+
+        Validator::extend('mobile', function ($attribute, $value, $parameters, $validator) {
+            // Use a regular expression to validate the mobile number format
+            return preg_match('/^\d{11}$/', $value);
+        });
+
+        View::composer('*', function ($view) {
+            $view->with('headercontent', HeaderContent::first());
+        });
         
         
     }

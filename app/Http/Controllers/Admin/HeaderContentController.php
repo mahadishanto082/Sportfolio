@@ -5,95 +5,56 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HeaderContent;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 
 class HeaderContentController extends Controller
 {
+
     public function index()
     {
-        $headercontents = HeaderContent::paginate(10);
-        return view('admin.headercontent.index', compact('headercontents'));
+        $headerContents = HeaderContent::all(); // Collection
+        return view('admin.headercontent.index', compact('headerContents'));
     }
-
+    
     public function create()
     {
-        return view('admin.headercontent.create');
-    }
-
-    public function edit($id)
-    {
-        $headercontent = HeaderContent::findOrFail($id);
-        return view('admin.headercontent.edit', compact('headercontent'));
+        $headerContent = HeaderContent::first();
+        return view('admin.headercontent.create', compact('headerContent'));
     }
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'button_names' => 'nullable|array',
-            'button_names.*' => 'nullable|string|max:255',
+        $request->validate([
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'status' => 'required|in:Active,Inactive',
+            'button_names' => 'required|array',
+            'button_links' => 'required|array',
         ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
+        $headerContent = new HeaderContent();
 
-        $data = [
-            'button_names' => $request->button_names ?? [],
-            'status' => $request->status,
-        ];
-
+        // Handle logo upload
         if ($request->hasFile('logo')) {
-            $data['logo'] = $request->file('logo')->store('logos', 'public');
+            $file = $request->file('logo');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/logos', $filename);
+            $headerContent->logo = $filename;
         }
 
-        HeaderContent::create($data);
+        $headerContent->status = $request->status;
 
-        return redirect()->route('admin.header-content.index')
-                         ->with('success', 'Header content created successfully.');
-    }
-
-    public function update(Request $request, HeaderContent $headerContent)
-    {
-        $validator = Validator::make($request->all(), [
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'button_names' => 'nullable|array',
-            'button_names.*' => 'nullable|string|max:255',
-            'status' => 'required|in:Active,Inactive',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+        // Save buttons as JSON
+        $buttons = [];
+        foreach ($request->button_names as $index => $name) {
+            $link = $request->button_links[$index] ?? '#';
+            $buttons[] = [
+                'name' => $name,
+                'link' => $link,
+            ];
         }
+        $headerContent->buttons = json_encode($buttons);
 
-        $data = [
-            'button_names' => $request->button_names ?? [],
-            'status' => $request->status,
-        ];
+        $headerContent->save();
 
-        if ($request->hasFile('logo')) {
-            if ($headerContent->logo) {
-                Storage::disk('public')->delete($headerContent->logo);
-            }
-            $data['logo'] = $request->file('logo')->store('logos', 'public');
-        }
-
-        $headerContent->update($data);
-
-        return redirect()->route('admin.header-content.index')
-                         ->with('success', 'Header content updated successfully.');
-    }
-
-    public function destroy(HeaderContent $headerContent)
-    {
-        if ($headerContent->logo) {
-            Storage::disk('public')->delete($headerContent->logo);
-        }
-        $headerContent->delete();
-
-        return redirect()->route('admin.header-content.index')
-                         ->with('success', 'Header content deleted successfully.');
+        return redirect()->back()->with('success', 'Header content saved successfully!');
     }
 }

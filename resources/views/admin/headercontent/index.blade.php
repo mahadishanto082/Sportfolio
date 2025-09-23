@@ -25,77 +25,80 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Logo</th>
-                                    <th>Button Names</th>
+                                    <th>Buttons</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if($headercontents->count())
-                                    @foreach($headercontents as $key => $headercontent)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
+    @if($headerContents->count())
+        @foreach($headerContents as $key => $headerContent)
+            <tr>
+                <td>{{ $loop->iteration }}</td>
 
-                                            {{-- Logo --}}
-                                            <td>
-                                                @if($headercontent->logo)
-                                                    <img width="50" src="{{ asset('storage/' . $headercontent->logo) }}">
-                                                @else
-                                                    --
-                                                @endif
-                                            </td>
+                {{-- Logo --}}
+                <td>
+                    @if($headerContent->logo)
+                        <img width="50" src="{{ asset('storage/' . $headerContent->logo) }}">
+                    @else
+                        --
+                    @endif
+                </td>
 
-                                            {{-- Button Names (stored as array/json) --}}
-                                            <td>
-                                                @php
-                                                    $buttons = is_array($headercontent->button_names) 
-                                                        ? $headercontent->button_names 
-                                                        : (json_decode($headercontent->button_names, true) ?? []);
-                                                @endphp
-                                                @if(!empty($buttons))
-                                                    {{ implode(', ', $buttons) }}
-                                                @else
-                                                    --
-                                                @endif
-                                            </td>
+                {{-- Buttons --}}
+                <td>
+                    @php
+                        $buttons = is_array($headerContent->buttons) 
+                            ? $headerContent->buttons 
+                            : (json_decode($headerContent->buttons, true) ?? []);
+                    @endphp
 
-                                            {{-- Status --}}
-                                            <td>{{ $headercontent->status }}</td>
+                    @if(!empty($buttons))
+                        <ul class="mb-0">
+                            @foreach($buttons as $btn)
+                                <li>
+                                    <strong>{{ $btn['name'] ?? '' }}</strong>: 
+                                    <a href="{{ $btn['link'] ?? '#' }}" target="_blank">
+                                        {{ $btn['link'] ?? '' }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        --
+                    @endif
+                </td>
 
-                                            {{-- Action --}}
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="btn btn-sm btn-outline-info dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                                        Action
-                                                    </a>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="{{ route('admin.header-content.edit', $headercontent->id) }}">
-                                                            <i class="fa fa-edit"></i> Edit
-                                                        </a>
-                                                        <a onclick="deleteRow('{{ route('admin.header-content.destroy', $headercontent->id) }}')" class="dropdown-item" href="javascript:void(0)">
-                                                            <i class="fa fa-trash"></i> Delete
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                @else
-                                    <tr>
-                                        <td colspan="5" class="text-center">No data found</td>
-                                    </tr>
-                                @endif
-                            </tbody>
+                {{-- Status --}}
+                <td>{{ $headerContent->status }}</td>
 
-                            @if($headercontents->hasPages())
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="5">
-                                            {{ $headercontents->links('admin.shared._paginate') }}
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            @endif
+                {{-- Action --}}
+                <td>
+                    <div class="dropdown">
+                        <a class="btn btn-sm btn-outline-info dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Action
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('admin.header-content.edit', $headerContent->id) }}">
+                                <i class="fa fa-edit"></i> Edit
+                            </a>
+                            <a onclick="deleteRow('{{ route('admin.header-content.destroy', $headerContent->id) }}')" class="dropdown-item" href="javascript:void(0)">
+                                <i class="fa fa-trash"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        @endforeach
+    @else
+        <tr>
+            <td colspan="5" class="text-center">No data found</td>
+        </tr>
+    @endif
+</tbody>
+
+
+                           
                         </table>
                     </div>
                 </div>

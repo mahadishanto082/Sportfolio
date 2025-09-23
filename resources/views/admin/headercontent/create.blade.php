@@ -24,17 +24,25 @@
                         <div class="form-layout form-layout-1">
                             <div class="row mg-b-25">
 
-                                {{-- Button Name Input with Add Button --}}
+                                {{-- Button Name Input --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-control-label">Button Name <span class="tx-danger">*</span></label>
-                                        <div class="input-group">
-                                            <input class="form-control" type="text" id="button_name_input" placeholder="Enter button name">
-                                            <div class="input-group-append">
-                                                <button type="button" class="btn btn-primary" id="add_button_btn">Add</button>
-                                            </div>
-                                        </div>
+                                        <input class="form-control" type="text" id="button_name_input" placeholder="Enter button name">
                                     </div>
+                                </div>
+
+                                {{-- Button Link Input --}}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Button Link <span class="tx-danger">*</span></label>
+                                        <input class="form-control" type="text" id="button_link_input" placeholder="Enter button link">
+                                    </div>
+                                </div>
+
+                                {{-- Add Button --}}
+                                <div class="col-md-12 mb-3">
+                                    <button type="button" class="btn btn-primary" id="add_button_btn">Add</button>
                                 </div>
 
                                 {{-- Items List Table --}}
@@ -45,6 +53,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Button Name</th>
+                                                <th>Button Link</th>
                                                 <th>Remove</th>
                                             </tr>
                                         </thead>
@@ -55,7 +64,7 @@
                                 {{-- Logo Upload --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-control-label">Logo <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Logo <span class="tx-danger"></span></label>
                                         <input class="form-control" type="file" name="logo" accept="image/*">
                                         @error('logo')
                                             <small class="text-danger">{{ $message }}</small>
@@ -114,34 +123,60 @@
         }
     });
 
-    // Button Name Add + Table Preview
-    let counter = 1;
+    // Button Name + Link Add & Table Preview
+   // Button Name + Link Add & Table Preview
+   let counter = 1;
 
-    document.getElementById('add_button_btn').addEventListener('click', function () {
-        const input = document.getElementById('button_name_input');
-        const value = input.value.trim();
-        const tableBody = document.querySelector('#buttons_table tbody');
+document.getElementById('add_button_btn').addEventListener('click', function () {
+    const nameInput = document.getElementById('button_name_input');
+    const linkInput = document.getElementById('button_link_input');
+    const name = nameInput.value.trim();
+    const link = linkInput.value.trim();
+    const tableBody = document.querySelector('#buttons_table tbody');
 
-        if (value) {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${counter++}</td>
-                <td>
-                    ${value}
-                    <input type="hidden" name="button_names[]" value="${value}">
-                </td>
-                <td><button type="button" class="btn btn-danger btn-sm remove-btn">Remove</button></td>
-            `;
-            tableBody.appendChild(row);
-            input.value = '';
-        }
-    });
+    if (name && link) {
+        // Create table row
+        const row = document.createElement('tr');
+        row.innerHTML = `
+    <td>${counter++}</td>
+    <td>
+        ${name}
+        <input type="hidden" name="button_names[]" value="${name}">
+    </td>
+    <td>
+        <a href="${link}" target="_blank">${link}</a>
+        <input type="hidden" name="button_links[]" value="${link}">
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger btn-sm remove-btn">Remove</button>
+    </td>
+`;
+document.querySelector('form').addEventListener('submit', function(e){
+    e.preventDefault(); // prevent actual submission
+    const formData = new FormData(this);
+    for(let pair of formData.entries()){
+        console.log(pair[0]+ ': '+ pair[1]);
+    }
+});
 
-    // Remove row from table
-    document.querySelector('#buttons_table').addEventListener('click', function (e) {
-        if (e.target.classList.contains('remove-btn')) {
-            e.target.closest('tr').remove();
-        }
-    });
+
+        tableBody.appendChild(row);
+
+        // Clear inputs
+        nameInput.value = '';
+        linkInput.value = '';
+    } else {
+        alert('Please enter both button name and link.');
+    }
+});
+
+// Remove row
+document.querySelector('#buttons_table').addEventListener('click', function (e) {
+    if (e.target.classList.contains('remove-btn')) {
+        e.target.closest('tr').remove();
+    }
+});
+
+
 </script>
 @endpush

@@ -12,7 +12,7 @@ class HeaderContent extends Model
 
     protected $fillable = [
         'logo',
-        'button_names', // <-- store all button names (array/json)
+        'buttons', // <-- store all button names (array/json)
         'status',
     ];
 
@@ -21,7 +21,7 @@ class HeaderContent extends Model
      * button_names will automatically be an array when retrieved.
      */
     protected $casts = [
-        'button_names' => 'array',
+        'buttons' => 'array',
     ];
 
     /**

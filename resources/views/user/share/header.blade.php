@@ -4,8 +4,10 @@
             <div class="logo-container">
                 <a class="navbar-brand" >
              
-                 <img src="{{ asset('image/Sportfolio.jpg') }}" class="site-logo img-fluid" alt="Logo">
-              </a>
+                <a href="#">
+                    <img src="{{ asset('storage/' . $headercontent->logo) }}" alt="Logo" height="100">
+                 </a>
+              
 
                 </a>
             </div>
@@ -14,52 +16,10 @@
                 <i class="fa-solid fa-bars "></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Services <i class="fa-solid fa-angle-down accent-color"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="service.html">Service</a></li>
-                            <li><a class="dropdown-item" href="single_services.html">Single Services</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Pages <i class="fa-solid fa-angle-down accent-color"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="case_studies.html">Case Studies</a></li>
-                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
-                            <li><a class="dropdown-item" href="partnership.html">Partnership</a></li>
-                            <li><a class="dropdown-item" href="pricing.html">Princing Plan</a></li>
-                            <li><a class="dropdown-item" href="testimonial.html">Testimonial</a></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQs</a></li>
-                            <li><a class="dropdown-item" href="404_page.html">Error 404</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Archive <i class="fa-solid fa-angle-down accent-color"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="single_post.html">Single Post</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                </ul>
+              
+
+
+            
             </div>
             <div class="navbar-action-container">
                 <div class="navbar-action-button">
@@ -67,12 +27,12 @@
                         <i id="themeIcon" class="fas fa-moon"></i>
                     </button>                      
                 </div>
-                <div class="navbar-icon-wrapper">
-                    <div class="icon-circle">
-                        <i class="fa-solid fa-phone-volume"></i>
-                    </div>
-                    <h6>+1 (62) 987 7543</h6>
-                </div>
+                
+                <a href="https://wa.me/01717489175" target="_blank" style="font-size: 40px; color: #25D366;">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+</div>
             </div>
         </div>
     </nav>
