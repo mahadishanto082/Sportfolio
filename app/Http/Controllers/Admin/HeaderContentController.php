@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HeaderContent;
-use App\Models\Dropdown;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,18 +27,12 @@ class HeaderContentController extends Controller
         return view('admin.headercontent.edit', compact('headercontent'));
     }
 
-    public function show()
-    {
-       
-        return view('admin.headercontent.dropdown');
-    }
-
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-           
-            'button_name' => 'nullable|string|max:255',
+            'button_names' => 'nullable|array',
+            'button_names.*' => 'nullable|string|max:255',
             'status' => 'required|in:Active,Inactive',
         ]);
 
@@ -47,27 +40,27 @@ class HeaderContentController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $data = $request->only([ 'button_name', 'status']);
-        $data['emergency_contact'] = $data['button_name'] ?? null;
-        unset($data['button_name']);
+        $data = [
+            'button_names' => $request->button_names ?? [],
+            'status' => $request->status,
+        ];
 
         if ($request->hasFile('logo')) {
             $data['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        // PHP array directly stored, Laravel handles via $casts
-        HeaderContent::updateOrCreate([], $data);
+        HeaderContent::create($data);
 
         return redirect()->route('admin.header-content.index')
-                         ->with('success', 'Header content updated successfully.');
+                         ->with('success', 'Header content created successfully.');
     }
 
     public function update(Request $request, HeaderContent $headerContent)
     {
         $validator = Validator::make($request->all(), [
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-           
-            'button_name' => 'nullable|string|max:255',
+            'button_names' => 'nullable|array',
+            'button_names.*' => 'nullable|string|max:255',
             'status' => 'required|in:Active,Inactive',
         ]);
 
@@ -75,9 +68,10 @@ class HeaderContentController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $data = $request->only([ 'button_name', 'status']);
-        $data['emergency_contact'] = $data['button_name'] ?? null;
-        unset($data['button_name']);
+        $data = [
+            'button_names' => $request->button_names ?? [],
+            'status' => $request->status,
+        ];
 
         if ($request->hasFile('logo')) {
             if ($headerContent->logo) {
@@ -102,7 +96,4 @@ class HeaderContentController extends Controller
         return redirect()->route('admin.header-content.index')
                          ->with('success', 'Header content deleted successfully.');
     }
-
-
-        
 }

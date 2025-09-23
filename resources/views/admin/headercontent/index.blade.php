@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Banner | List
+    Header Content | List
 @endsection
 
 @section('page-info')
@@ -25,8 +25,7 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Logo</th>
-                                    <th>Navigation Links</th>
-                                    <th>Button Name</th>
+                                    <th>Button Names</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -36,18 +35,34 @@
                                     @foreach($headercontents as $key => $headercontent)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+
+                                            {{-- Logo --}}
                                             <td>
                                                 @if($headercontent->logo)
-                                                    <img width="50" src="{{ asset('storage/' . $headercontent->logo) }}" >
+                                                    <img width="50" src="{{ asset('storage/' . $headercontent->logo) }}">
+                                                @else
+                                                    --
                                                 @endif
                                             </td>
-                                      
-                                          
-                                            <td>{{ is_array($headercontent->nav_links) ? implode(', ', $headercontent->nav_links) : ($headercontent->nav_links ?? '--') }}</td>
 
-                                            <td>{{ $headercontent->emergency_contact ?? '--' }}</td>
+                                            {{-- Button Names (stored as array/json) --}}
+                                            <td>
+                                                @php
+                                                    $buttons = is_array($headercontent->button_names) 
+                                                        ? $headercontent->button_names 
+                                                        : (json_decode($headercontent->button_names, true) ?? []);
+                                                @endphp
+                                                @if(!empty($buttons))
+                                                    {{ implode(', ', $buttons) }}
+                                                @else
+                                                    --
+                                                @endif
+                                            </td>
 
+                                            {{-- Status --}}
                                             <td>{{ $headercontent->status }}</td>
+
+                                            {{-- Action --}}
                                             <td>
                                                 <div class="dropdown">
                                                     <a class="btn btn-sm btn-outline-info dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -58,8 +73,8 @@
                                                             <i class="fa fa-edit"></i> Edit
                                                         </a>
                                                         <a onclick="deleteRow('{{ route('admin.header-content.destroy', $headercontent->id) }}')" class="dropdown-item" href="javascript:void(0)">
-                                <i class="fa fa-trash"></i> Delete
-                            </a>
+                                                            <i class="fa fa-trash"></i> Delete
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -67,14 +82,15 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="7" class="text-center">No data found</td>
+                                        <td colspan="5" class="text-center">No data found</td>
                                     </tr>
                                 @endif
                             </tbody>
+
                             @if($headercontents->hasPages())
                                 <tfoot>
                                     <tr>
-                                        <td colspan="7">
+                                        <td colspan="5">
                                             {{ $headercontents->links('admin.shared._paginate') }}
                                         </td>
                                     </tr>
