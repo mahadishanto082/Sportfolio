@@ -36,9 +36,10 @@ class HeaderContentController extends Controller
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->storeAs('public/logos', $filename);
-            $headerContent->logo = $filename;
+            $path = $file->storeAs('logos', $filename, 'public'); 
+            $headerContent->logo = $path; 
         }
+        
 
         $headerContent->status = $request->status;
 
@@ -56,5 +57,53 @@ class HeaderContentController extends Controller
         $headerContent->save();
 
         return redirect()->back()->with('success', 'Header content saved successfully!');
+    }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'status' => 'required|in:Active,Inactive',
+            'button_names' => 'required|array',
+            'button_links' => 'required|array',
+        ]);
+
+        $headerContent = HeaderContent::findOrFail($id);
+
+        // // Handle logo upload
+        // if ($request->hasFile('logo')) {
+        //     $file = $request->file('logo');
+        //     $filename = time() . '_' . $file->getClientOriginalName();
+        //     $file->storeAs('public/logos', $filename);
+            
+        // }
+        if ($request->hasFile('logo')) {
+            $data['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        
+
+        $headerContent->status = $request->status;
+
+        // Save buttons as JSON
+        $buttons = [];
+        foreach ($request->button_names as $index => $name) {
+            $link = $request->button_links[$index] ?? '#';
+            $buttons[] = [
+                'name' => $name,
+                'link' => $link,
+            ];
+        }
+        $headerContent->buttons = json_encode($buttons);
+
+        $headerContent->save();
+
+        return redirect()->back()->with('success', 'Header content updated successfully!');
+    }
+    public function destroy($id)
+    {
+        $headerContent = HeaderContent::findOrFail($id);
+        $headerContent->delete();
+
+        return redirect()->back()->with('success', 'Header content deleted successfully!');
     }
 }

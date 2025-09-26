@@ -42,6 +42,7 @@ class HomeService
     public function getServices()
     {
         return Services::all();
+        
     }
     public function getAbout()
     {

@@ -68,23 +68,19 @@
         </div>
 
         <!-- Section Expertise -->
+        @php
+        $service = DB::table('services')->first();
+        @endphp
         <div class="section">
             <div class="hero-container">
                 <div class="d-flex flex-column flex-xl-row gspace-5">
                     <div class="expertise-img-layout">
                         <div class="image-container expertise-img">
-                            <img src="./image/dummy-img-600x400.jpg" alt="Expertise Image" class="img-fluid  animate-box animated animate__animated" data-animate="animate__fadeInUp">
+                        <img src="{{ asset('storage/' . $service->icon) }}" alt="Logo" height="1600px" width="1600px">
                             <div class="expertise-layout">
                                 <div class="d-flex flex-column">
                                     <div class="card-expertise-wrapper">
-                                        <div class="card card-expertise  animate-box animated animate__animated" data-animate="animate__fadeInDown">
-                                            <h4>Ready to Elevate Your Digital Presence?</h4>
-                                            <p>Let's create a custom strategy that fits your business goals.</p>
-                                            <div class="d-flex align-items-center flex-row gspace-2 expertise-link">
-                                                <a href="./contact.html">Get Free Consultation</a>
-                                                <i class="fa-solid fa-circle-arrow-right"></i>
-                                            </div>
-                                        </div>
+                                      
                                     </div>
                                     <div class="expertise-spacer"></div>
                                 </div>
@@ -97,31 +93,30 @@
                             <i class="fa-regular fa-circle-dot"></i>
                             <span>Our Expertise</span>
                         </div>
-                        <h2 class="title-heading animate-box animated animate__animated" data-animate="animate__fadeInRight">Data Driven Strategies, Measurable Results</h2>
-                        <p>At Marko, we specialize in crafting innovative digital marketing strategies that drive real business growth. Our expertise ensures your brand stays ahead in the competitive digital landscape.</p>
-                        <div class="d-flex flex-column flex-md-row gspace-2">
-                            <div class="expertise-list">
-                                <h5>What We Do Best</h5>
-                                <ul class="check-list">
-                                    <li><a href="./single_services.html">Performance Marketing</a></li>
-                                    <li><a href="./single_services.html">Social Media Growth</a></li>
-                                    <li><a href="./single_services.html">Content Marketing</a></li>
-                                    <li><a href="./single_services.html">PPC & Paid Ads</a></li>
-                                    <li><a href="./single_services.html">Brand Strategy</a></li>
-                                    <li><a href="./single_services.html">Conversion Optimization</a></li>
-                                </ul>
-                            </div>
-                            <div class="card card-expertise card-expertise-counter animate-box animated animate__animated" data-animate="animate__fadeInUp">
-                                <div class="d-flex flex-row gspace-2 align-items-center">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <span class="counter" data-target="21"></span>
-                                        <span class="counter-detail">+</span>
-                                    </div>
-                                    <h6>Years of Experience on Digital Marketing Services</h6>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit in ex ligula varius at rutrum et finibus sed felis qisque.</p>
-                            </div>
-                        </div>
+
+
+                  
+                        <h2 class="title-heading animate-box animated animate__animated" data-animate="animate__fadeInRight">{{ $service ->name }}</h2>
+                        <p>
+
+                            
+                        </p>
+                        <div class="d-flex flex-column flex-md-row">
+    <div class="expertise-list">
+        <h5>What We Do Best</h5>
+        <ul class="check-list" style="list-style: none; padding: 0; margin: 0;">
+            @foreach (explode('.', $service->description) as $description)
+                @if (trim($description) !== '')
+                    <li style="white-space: nowrap;">{{ trim($description) }}.</li>
+                @endif
+            @endforeach
+        </ul>
+    </div>
+</div>
+
+    </div>
+</div>
+
                     </div>
                 </div>
             </div>

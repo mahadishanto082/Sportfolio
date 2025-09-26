@@ -5,7 +5,7 @@
                 <a class="navbar-brand" >
              
                 <a href="#">
-                    <img src="{{ asset('storage/' . $headercontent->logo) }}" alt="Logo" height="100">
+                    <img src="{{ asset('storage/' . $headerContent->logo) }}" alt="Logo" height="100">
                  </a>
               
 
@@ -16,10 +16,27 @@
                 <i class="fa-solid fa-bars "></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              
+                <ul class="navbar-nav mx-auto">
+                @php
+    $buttons = is_array($headerContent->buttons) 
+        ? $headerContent->buttons 
+        : (json_decode($headerContent->buttons, true) ?? []);
+@endphp
 
+<ul class="navbar-nav mx-auto">
+    @if(!empty($buttons))
+        @foreach ($buttons as $btn)
+            <li class="nav-item">
+                <a class="nav-link" href="{{ $btn['link'] ?? '#' }}">
+                    {{ $btn['name'] ?? '' }}
+                </a>
+            </li>
+        @endforeach
+    @endif
+</ul>
+   
 
-            
+                  </ul>
             </div>
             <div class="navbar-action-container">
                 <div class="navbar-action-button">

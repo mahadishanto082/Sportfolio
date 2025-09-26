@@ -31,8 +31,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::composer('*', function ($view) {
-            $view->with('headercontent', HeaderContent::first());
+            $view->with('headerContent', HeaderContent::where('status', 'Active')->first());
         });
+        
         
         
     }

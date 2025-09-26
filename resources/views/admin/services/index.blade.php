@@ -38,9 +38,8 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $service->title }}</td>
                                         <td>
-                                        @if($service->icon)
-        <img src="{{ asset('storage/services/' . $service->icon) }}" alt="{{ $service->title }}" width="50" height="50">
-    @endif
+                                        <img src="{{ asset('storage/' . $service->icon) }}" alt="{{ $service->title }}" width="50" height="50">
+
                                         </td>
                                         <td>{{ $service->name }}</td>
                                         <td>{{ Str::limit($service->description, 50) }}</td>
