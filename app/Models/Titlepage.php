@@ -10,7 +10,7 @@ class Titlepage extends Model
 
     protected $fillable = [
         'image',
-        'bg_image', // Optional background image for the title page
+    
         'short_title',
         'content',
         'caption', 

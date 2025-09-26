@@ -40,16 +40,7 @@
 
 
                                  {{-- Image --}}
-                                 <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="form-control-label">Background Image</label>
-                                    <input type="file" class="form-control" name="bg_image" >
-                                    @error('bg_image')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div id="images_preview" class="d-flex flex-wrap gap-2 mt-2"></div>
-                            </div>
+                             
 
                             <div class="col-md-6">
                                     <label class="form-control-label">Short-Title</label>

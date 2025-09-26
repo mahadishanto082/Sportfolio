@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->text('description')->nullable();
             $table->string('emergency_contact')->nullable();
-            $table->text('caption')->nullable(); // 👈 Correct type (TEXT, not VARCHAR)
+            $table->text('caption')->nullable(); // 👈 long text allowed
             $table->string('status')->default('active'); // default value
             $table->timestamps();
         });

@@ -26,19 +26,26 @@
             <div class="banner-video-container keep-dark animate-box animated animate__animated" data-animate="animate__fadeInUp">
                 <div id="banner-video-background"></div>
                 <div class="hero-container position-relative">
+                    @php
+                    $title = DB::table('titlepages')->first();
+                    @endphp
                     <div class="d-flex flex-column gspace-2">
-                        <h1 class="title-heading-banner animate-box animated animate__animated" data-animate="animate__fadeInLeft">Amplify Your Brand with Cutting-Edge Digital Marketing</h1>
+                        <h1 class="title-heading-banner animate-box animated animate__animated" data-animate="animate__fadeInLeft"  style="font-size: 40px;">
+{{ $title->short_title }}
+
+
+                        </h1>
                         <div class="banner-heading">
                             <div class="banner-video-content order-xl-1 order-2 animate-box animated animate__animated" data-animate="animate__fadeInUp">
                                 <div class="d-flex flex-column flex-xl-row text-xl-start text-center align-items-center gspace-5">
                                     <button class="request-loader" data-video="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1"><i class="fa-solid fa-play"></i></button>
                                     <p>
-                                        Watch our video reviews and see how businesses achieve success with Marko's digital marketing solutions.
+                                        {{ $title->content }}
                                     </p>
                                 </div>
                             </div>
                             <div class="banner-content order-xl-2 order-1  animate-box animated animate__animated" data-animate="animate__fadeInRight">
-                                <p>Marko empowers businesses to grow online with data driven digital marketing, innovative branding, and performance focused strategies trusted by top brands lorem ipsum dolor sit amet consectetur.</p>
+                                <p>{{ $title->caption }}</p>
                                 <div class="d-flex flex-md-row flex-column justify-content-center justify-content-xl-start align-self-center align-self-xl-start gspace-3">
                                     <a href="./about.html" class="btn btn-accent">
                                         <div class="btn-title">
@@ -102,20 +109,20 @@
                             
                         </p>
                         <div class="d-flex flex-column flex-md-row">
-    <div class="expertise-list">
-        <h5>What We Do Best</h5>
-        <ul class="check-list" style="list-style: none; padding: 0; margin: 0;">
-            @foreach (explode('.', $service->description) as $description)
-                @if (trim($description) !== '')
-                    <li style="white-space: nowrap;">{{ trim($description) }}.</li>
-                @endif
-            @endforeach
-        </ul>
-    </div>
-</div>
+                            <div class="expertise-list">
+                                <h5>What We Do Best</h5>
+                                <ul class="check-list" style="list-style: none; padding: 0; margin: 0;">
+                                    @foreach (explode('.', $service->description) as $description)
+                                        @if (trim($description) !== '')
+                                            <li style="white-space: nowrap;">{{ trim($description) }}.</li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
 
-    </div>
-</div>
+                     </div>
+                </div>
 
                     </div>
                 </div>

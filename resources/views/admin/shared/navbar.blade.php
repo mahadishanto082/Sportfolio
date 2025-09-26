@@ -26,6 +26,19 @@
   </a>
 </li>
 
+<li class="br-menu-item">
+  <a href="{{ route('admin.title-page.index') }}"
+      class="br-menu-link {{ Request::routeIs('admin.title-page*') ? 'active' : '' }}">
+    <i class="menu-item-icon icon ion-ios-albums-outline tx-24"></i>
+    <span class="menu-item-label">Title Page</span>
+  </a>
+  <ul class="br-menu-sub">
+    <li class="sub-item"><a href="{{ route('admin.title-page.index') }}" class="sub-link">List</a></li>
+    <li class="sub-item"><a href="{{ route('admin.title-page.create') }}" class="sub-link">Add New</a></li>
+  </ul>
+</li>
+
+
 
     <!-- Services -->
     <li class="br-menu-item">

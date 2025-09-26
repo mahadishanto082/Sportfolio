@@ -25,11 +25,11 @@ class TitlePageController extends Controller
     {
         $validated = $request->validate([
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'bg_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+     
             
             'short_title' => 'nullable|string|max:255',
             'content' => 'required|string',
-            'caption' => 'nullable|string|max:255',
+            'caption' => 'nullable|string|',
             'status' => 'required|in:Active,Inactive',
         ]);
 
@@ -37,13 +37,11 @@ class TitlePageController extends Controller
             $validated['image'] = $request->file('image')->store('title_pages', ['disk' => 'public']);
         }
 
-        if ($request->hasFile('bg_image')) {
-            $validated['bg_image'] = $request->file('bg_image')->store('title_pages', ['disk' => 'public']);
-        }
+     
 
         TitlePage::create([
             'image' => $validated['image'] ?? null,
-            'bg_image' => $validated['bg_image'] ?? null,
+          
             
             'short_title' => $validated['short_title'],
             'content' => $validated['content'],
@@ -65,7 +63,7 @@ class TitlePageController extends Controller
 
         $validated = $request->validate([
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'bg_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            
             
             'short_title' => 'nullable|string|max:255',
             'content' => 'required|string',
@@ -80,16 +78,11 @@ class TitlePageController extends Controller
             $validated['image'] = $request->file('image')->store('title_pages', ['disk' => 'public']);
         }
 
-        if ($request->hasFile('bg_image')) {
-            if ($titlePage->bg_image) {
-                Storage::disk('public')->delete($titlePage->bg_image);
-            }
-            $validated['bg_image'] = $request->file('bg_image')->store('title_pages', ['disk' => 'public']);
-        }
+      
 
         $titlePage->update([
             'image' => $validated['image'] ?? $titlePage->image,
-            'bg_image' => $validated['bg_image'] ?? $titlePage->bg_image,
+          
             
             'short_title' => $validated['short_title'],
             'content' => $validated['content'],
@@ -107,9 +100,7 @@ class TitlePageController extends Controller
             Storage::disk('public')->delete($titlePage->image);
         }
         
-        if ($titlePage->bg_image) {
-            Storage::disk('public')->delete($titlePage->bg_image);
-        }
+  
 
         $titlePage->delete();
 

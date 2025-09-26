@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MainPageController;
+use App\Http\Controllers\Admin\TitlePageController;
+
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\PortfolioController;
@@ -21,6 +23,7 @@ Route::middleware('auth:admin')->group(function () {
 });
 
 Route::resource('main-page', MainPageController::class);
+Route::resource('title-page', TitlePageController::class);
 Route::resource('services', ServicesController::class);
 Route::resource('about', AboutController::class);
 Route::resource('portfolio', PortfolioController::class);
