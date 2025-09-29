@@ -10,11 +10,12 @@ class About extends Model
 
     protected $fillable = [
         'title',
+        'sub_title',
         'description',
         'semi-description',
         'image',
         'logo_image',
-        'caption',
+     
         'status',
         'created_at',
         'updated_at'

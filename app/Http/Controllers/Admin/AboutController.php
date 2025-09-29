@@ -31,9 +31,10 @@ class AboutController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'nullable|string|max:255',
+            'sub_title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'semi_description' => 'nullable|string',
-            'caption' => 'nullable|string|max:255',
+           
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'logo_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required|in:Active,Inactive',
@@ -47,9 +48,10 @@ class AboutController extends Controller
 
         $about = new About();
         $about->title = $validated['title'] ?? null;
+        $about->sub_title = $validated['sub_title'] ?? null;
         $about->description = $validated['description'] ?? null;
         $about->semi_description = $validated['semi_description'] ?? null;
-        $about->caption = $validated['caption'] ?? null;
+  
         $about->status = $validated['status'];
 
         // Handle images
@@ -69,9 +71,10 @@ class AboutController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'sub_title' => 'nullable|string|max:255',
             'description' => 'required|string',
             'semi_description' => 'nullable|string',
-            'caption' => 'nullable|string|max:255',
+            
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'logo_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required|in:Active,Inactive',
@@ -80,9 +83,10 @@ class AboutController extends Controller
         $about = About::first();
 
         $about->title = $request->input('title');
+        $about->sub_title = $request->input('sub_title');
         $about->description = $request->input('description');
         $about->semi_description = $request->input('semi_description');
-        $about->caption = $request->input('caption');
+       
         $about->status = $request->input('status');
 
         // Handle new image upload

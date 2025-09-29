@@ -139,237 +139,102 @@
             </div>
         </div>
 
-        <!-- Section Partner -->
-        <div class="section-partner">
-            <div class="hero-container">
-                <div class="card card-partner  animate-box animated animate__animated" data-animate="animate__fadeInRight">
-                    <div class="partner-spacer"></div>
-                    <div class="row row-cols-xl-2 row-cols-1 align-items-center px-5 position-relative z-2">
-                        <div class="col">
-                            <div class="d-flex flex-column justify-content-start pe-xl-3 pe-0">
-                                <h3 class="title-heading">Powering Success for Top Brands</h3>
+       
+ <!-- Section Why Choose Us -->
+<div class="section">
+    <div class="hero-container">
+        @php
+            $choose = DB::table('abouts')->first();
+
+            // define icons (order matches semi_description items)
+            $icons = [
+                'image/Icon-2.png',
+                'image/icon-1.png',
+                'image/Icon-3.png',
+                'image/icon-4.png',   // new icon
+                'image/icon-5.png',   // new icon
+            ];
+
+            // split semi_description into items
+            $semiItems = array_filter(array_map('trim', explode('.', $choose->semi_description)));
+        @endphp
+
+        <div class="d-flex flex-column flex-xl-row gspace-5">
+            
+            <!-- LEFT SIDE: Cards -->
+            <div class="chooseus-card-container flex-grow-1">
+                <h2>{{ $choose->sub_title }}</h2>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    @foreach($semiItems as $index => $semi_description)
+                        <div class="card card-chooseus animate-box animate__animated text-center p-3" 
+                             data-animate="animate__fadeInLeft" 
+                             style="width: 220px; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+                            <div class="chooseus-icon-wrapper mb-3">
+                                <div class="chooseus-icon-layout">
+                                    <div class="chooseus-icon">
+                                        <img src="{{ asset($icons[$index] ?? 'default-icon.png') }}" 
+                                             alt="Why Choose Us Icon" 
+                                             class="img-fluid" 
+                                             style="width:60px; height:60px;">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="d-flex flex-column ps-xl-3 ps-0">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ex ligula, varius at rutrum et, finibus sed felis. 
-                                    Quisque eget tincidunt lectus. Sed quis diam sed neque mattis feugiat.
+
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center p-0">
+                                <p class="mb-0" style="font-weight: 500; font-size: 16px;">
+                                    {{ $semi_description }}.
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiperPartner-layout">
-                        <div class="swiperPartner-overlay">
-                            <div class="spacer"></div>
-                        </div>
-                        <div class="swiperPartner-container">
-                            <div class="swiper swiperPartner">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-7.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-6.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-8.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-2.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-1.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-3.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-5.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-4.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#">
-                                            <div class="partner-slide">
-                                                <img src="./image/client-7.png" alt="Client" class="partner-logo img-fluid">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="partner-slide">
-                                            <img src="./image/client-6.png" alt="Client" class="partner-logo img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="partner-slide">
-                                            <img src="./image/client-8.png" alt="Client" class="partner-logo img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="partner-slide">
-                                            <img src="./image/client-2.png" alt="Client" class="partner-logo img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="partner-slide">
-                                            <img src="./image/client-1.png" alt="Client" class="partner-logo img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="partner-slide">
-                                            <img src="./image/client-3.png" alt="Client" class="partner-logo img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="partner-slide">
-                                            <img src="./image/client-5.png" alt="Client" class="partner-logo img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="partner-slide">
-                                            <img src="./image/client-4.png" alt="Client" class="partner-logo img-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
 
-        <!-- Section Why Choose Us -->
-        <div class="section">
-            <div class="hero-container">
-                <div class="d-flex flex-column flex-xl-row gspace-5">
-                    <div class="chooseus-card-container">
-                        <div class="d-flex flex-column gspace-2">
-                            <div class="card card-chooseus animate-box animated fast animate__animated" data-animate="animate__fadeInLeft">
-                                <div class="chooseus-icon-wrapper">
-                                    <div class="chooseus-spacer above"></div>
-                                    <div class="chooseus-icon-layout">
-                                        <div class="chooseus-icon">
-                                            <img src="./image/Icon-2.png" alt="Why Choose Us Icon" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="chooseus-spacer below"></div>
-                                </div>
-                                <div class="chooseus-content">
-                                    <h4 class="chooseus-title">Data-Driven Approach</h4>
-                                    <p>Every decision is backed by real-time analytics for maximum impact lorem ipsum dolor sit  consectetur adipiscing elit ut elit tellus luctus nec.</p>
-                                    <div class="link-wrapper">
-                                        <a href="#">Read More</a>
-                                        <i class="fa-solid fa-arrow-circle-right accent-color"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-chooseus  animate-box animated animate__animated" data-animate="animate__fadeInLeft">
-                                <div class="chooseus-icon-wrapper">
-                                    <div class="chooseus-spacer above"></div>
-                                    <div class="chooseus-icon-layout">
-                                        <div class="chooseus-icon">
-                                            <img src="./image/icon-1.png" alt="Why Choose Us Icon" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="chooseus-spacer below"></div>
-                                </div>
-                                <div class="chooseus-content">
-                                    <h4 class="chooseus-title">Creative & Innovative</h4>
-                                    <p>Cutting-edge marketing techniques to keep you ahead of the competition lorem ipsum dolor sit awsa consectetur adipiscing elit ut elit.</p>
-                                    <div class="link-wrapper">
-                                        <a href="#">Read More</a>
-                                        <i class="fa-solid fa-arrow-circle-right accent-color"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-chooseus  animate-box animated slow animate__animated" data-animate="animate__fadeInLeft">
-                                <div class="chooseus-icon-wrapper">
-                                    <div class="chooseus-spacer above"></div>
-                                    <div class="chooseus-icon-layout">
-                                        <div class="chooseus-icon">
-                                            <img src="./image/Icon-3.png" alt="Why Choose Us Icon" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="chooseus-spacer below"></div>
-                                </div>
-                                <div class="chooseus-content">
-                                    <h4 class="chooseus-title">Transparent Reporting</h4>
-                                    <p>Clear insights and performance tracking, so you always know your ROI lorem ipsum dolo consectetur adipiscing elit ut elit tellus luctus nec.</p>
-                                    <div class="link-wrapper">
-                                        <a href="#">Read More</a>
-                                        <i class="fa-solid fa-arrow-circle-right accent-color"></i>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- RIGHT SIDE: Why Choose Marko -->
+            <div class="chooseus-content-container flex-grow-1">
+                <div class="d-flex flex-column gspace-5">
+                    <div class="d-flex flex-column gspace-2">
+                        <div class="sub-heading animate-box animate__animated" data-animate="animate__fadeInDown">
+                            <i class="fa-regular fa-circle-dot"></i>
+                            <span>{{ $choose->title }}</span>
                         </div>
+                        <h2 class="title-heading animate-box animate__animated" data-animate="animate__fadeInDown">
+                            Your Success is Our Mission
+                        </h2>
+                        <p class="mb-0 animate-box animate__animated" data-animate="animate__fadeInDown">
+                        <div class="d-flex flex-column flex-md-row white-space: nowrap; "> 
+                         <div class="expertise-list"> 
+                         <div class="d-flex flex-column flex-md-row">
+    <div class="expertise-list">
+      
+    <ul class="check-list" style="list-style: none; padding: 0; margin: 0; margin-left: -90px;">
+    @foreach (explode('.', $choose->description) as $description)
+        @if (trim($description) !== '')
+            <li style="white-space: nowrap;">{{ trim($description) }}.</li>
+        @endif
+    @endforeach
+</ul>
+
+    </div>
+</div>
+
+                        </div>
+                        </p>
                     </div>
-                    <div class="chooseus-content-container">
-                        <div class="d-flex flex-column gspace-5">
-                            <div class="d-flex flex-column gspace-2">
-                                <div class="sub-heading  animate-box animated animate__animated" data-animate="animate__fadeInDown">
-                                    <i class="fa-regular fa-circle-dot"></i>
-                                    <span>Why Choose Marko</span>
-                                </div>
-                                <h2 class="title-heading  animate-box animated animate__animated" data-animate="animate__fadeInDown">Your Success is Our Mission</h2>
-                                <p class="mb-0 animate-box animated animate__animated" data-animate="animate__fadeInDown">In the fast-paced digital world, choosing the right marketing partner makes all the difference. At Marko, we don’t just create campaigns—we craft strategies that deliver measurable success.</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="./image/dummy-img-600x400.jpg" alt="Why Choose Us Image" class="chooseus-img">
-                                <div class="card-chooseus-cta-layout">
-                                    <div class="chooseus-cta-spacer"></div>
-                                    <div class="d-flex flex-column align-items-end">
-                                        <div class="chooseus-cta-spacer"></div>    
-                                        <div class="card-chooseus-cta-wrapper">
-                                            <div class="card card-chooseus-cta animate-box animated animate__animated" data-animate="animate__fadeInUp">
-                                                <h5>Partner with Marko & take your brand to the next level.</h5>
-                                                <div class="link-wrapper">
-                                                    <a href="./contact.html">Let's Talk Strategy</a>
-                                                    <i class="fa-solid fa-circle-arrow-right"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="image-container">
+                    <img src="{{ asset('storage/' . $choose->image) }}" alt="Logo" height="600px" width="800px">
+                        <div class="card-chooseus-cta-layout">
+                            <div class="chooseus-cta-spacer"></div>
+                           
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+        </div><!-- flex row -->
+    </div>
+</div>
 
         <!-- Section Guide -->
         <div class="section-guide">

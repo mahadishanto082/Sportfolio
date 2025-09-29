@@ -46,6 +46,13 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
+                            <div class="col-md-6">
+                                    <label class="form-control-label">Sub title</label>
+                                    <input type="text" class="form-control" name="sub_title" value="{{ old('title') }}" placeholder="Enter sub_title">
+                                    @error('semi_title')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
                                 {{-- Image --}}
                                  <div class="col-md-12">
                                 <div class="form-group">
@@ -58,12 +65,7 @@
                                 <div id="images_preview" class="d-flex flex-wrap gap-2 mt-2"></div>
                             </div>
 
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>caption</label>
-                                    <textarea class="form-control" name="caption" rows="4" placeholder="Enter caption"></textarea>
-                                </div>
-                            </div>
+                          
 
 
   
@@ -114,7 +116,7 @@
                             </div>
 
                             <div class="form-layout-footer">
-                                <button type="submit" class="btn btn-info">Save Dropdown</button>
+                                <button type="submit" class="btn btn-info">Save </button>
                             </div>
                         </div>
                 </form>
