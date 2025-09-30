@@ -13,15 +13,26 @@ return new class extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
-            $table->string('tech')->nullable(); // Can store JSON or comma-separated
+
+            // Title and Sub Title
             $table->string('title');
-            $table->string('short_title')->nullable();
-            $table->string('project_name');
-            $table->text('project_short_des')->nullable();
-            $table->string('category')->nullable();
-            $table->string('case_study_url')->nullable();
-            $table->string('image')->nullable();
-            $table->json('additional_images')->nullable(); // Optional gallery
+            $table->string('sub_title')->nullable();
+
+            // Logo
+            $table->string('logo_image')->nullable();
+
+            // Caption
+            $table->string('caption')->nullable();
+
+            // Project Name
+            $table->string('project_name')->nullable();
+
+            // Description
+            $table->text('description')->nullable();
+
+            // Status
+            $table->enum('status', ['Active', 'Inactive'])->default('Active');
+
             $table->timestamps();
         });
     }

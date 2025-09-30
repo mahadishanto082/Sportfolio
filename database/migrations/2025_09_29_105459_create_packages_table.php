@@ -6,20 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('techs', function (Blueprint $table) {
+        Schema::create('packages', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
             $table->string('name')->nullable();
-            $table->text('description')->nullable();
-            $table->string('logo_image');
+            $table->decimal('price', 10, 2)->nullable();
+            $table->string('duration')->nullable();
+            $table->text('features')->nullable();
             $table->enum('status', ['Active', 'Inactive'])->default('Active');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('teches');
+        Schema::dropIfExists('packages');
     }
 };

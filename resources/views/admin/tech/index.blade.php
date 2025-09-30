@@ -25,6 +25,7 @@
                             <tr>
                                 <th>SL</th>
                                 <th>Name</th>
+                                <th>Description</th>
                                 <th>Logo</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -35,6 +36,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $tech->name }}</td>
+                                    <td>{{ $tech->description }}</td>
                                     <td>
                                         @if($tech->logo_image)
                                             <img src="{{ asset('storage/' . $tech->logo_image) }}" 

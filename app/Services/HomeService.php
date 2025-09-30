@@ -8,6 +8,7 @@ use App\Models\HeaderContent;
 use App\Models\Titlepage;
 use App\Models\Services;
 use App\Models\About;
+use App\Models\Packages;
 use App\Models\Tech;
 use App\Models\Portfolio;
 
@@ -56,6 +57,10 @@ class HomeService
      {
         return Portfolio::all();
      }
+    public function getPackages()
+    {
+        return Packages::all();
+    }
 
 
     public function getContact()

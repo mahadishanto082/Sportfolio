@@ -24,6 +24,7 @@ class TechController extends Controller
     {
         $data = $request->validate([
             'name' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
             'logo_image' => 'required|image|max:2048',
             'status' => 'required|in:Active,Inactive',
         ]);
@@ -47,6 +48,7 @@ class TechController extends Controller
     {
         $data = $request->validate([
             'name' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
             'logo_image' => 'nullable|image|max:2048', // fixed: nullable, not required
             'status' => 'required|in:Active,Inactive',
         ]);

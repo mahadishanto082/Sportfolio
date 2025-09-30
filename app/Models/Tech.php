@@ -12,6 +12,7 @@ class Tech extends Model
     protected $table = 'techs';
     protected $fillable = [
         'name',
+        'description',
         'logo_image',
         'status',
     ];

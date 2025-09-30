@@ -31,6 +31,13 @@
                                     <input type="text" class="form-control" name="name" placeholder="Enter tech name">
                                 </div>
                             </div>
+                            {{-- Description --}}
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text" class="form-control" name="description" placeholder="Enter tech Description">
+                                </div>
+                            </div>
 
                             {{-- Logo --}}
                             <div class="col-md-6">
