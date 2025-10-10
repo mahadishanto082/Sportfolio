@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Contact extends Model
+class FooterContent extends Model
 {
     use HasFactory;
+    protected $table = 'footercontents';
 
     // Fillable fields for mass assignment
     protected $fillable = [
+        'logo',
         'name',
         'email',
         'phone',

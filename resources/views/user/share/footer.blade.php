@@ -1,4 +1,7 @@
 <div class="section-footer">
+    @php
+    $footer = DB::table('footers')->first();
+    @endphp
     <div class="bg-footer-wrapper">
         <div class="bg-footer">
             <div class="hero-container position-relative z-2">
@@ -7,11 +10,12 @@
                         <div class="col col-xl-4">
                             <div class="footer-logo-container">
                                 <div class="logo-container-footer">
-                                    <img src="./image/marko-logo.png" alt="Logo" class="site-logo img-fluid">
+                                  <image src="{{ asset($footer->logo) }}" alt="logo" class="logo-footer"/>
                                 </div>
-                                <h4>Driving Digital Growth with Innovation & Strategy</h4>
+                                <h4>Stradig Tech</h4>
                                 <p>
-                                    Lorem ipsum dolor si consectetur adipiscing elit ut elit tellus luctus nec ullamcorper mattis pulvinar dapibus leo.
+                                From Design to Development — We Deliver Digital Success.Innovating Ideas, Empowering Businesses.
+
                                 </p>
                             </div>
                         </div>
@@ -22,8 +26,7 @@
                                     <li><a href="./index.html">Home</a></li>
                                     <li><a href="./about.html">About Us</a></li>
                                     <li><a href="./service.html">Service</a></li>
-                                    <li><a href="./case_studies.html">Case Studies</a></li>
-                                    <li><a href="./blog.html">Blog</a></li>
+                                
                                     <li><a href="./contact.html">Contact Us</a></li>
                                 </ul>
                             </div>
@@ -45,7 +48,7 @@
                             <div class="footer-contact-container">
                                 <h5>Contact Info</h5>
                                 <ul class="contact-list">
-                                    <li>hello@markoagency.com</li>
+                                    <li>{{ $footer-> }}</li>
                                     <li>+1 234 567 890</li>
                                     <li>123 Digital Street, New York, USA</li>
                                 </ul>

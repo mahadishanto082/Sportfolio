@@ -307,9 +307,13 @@
         @php
     $portfolios = DB::table('portfolios')->first();
 @endphp
+
+@if($portfolios)
 <div class="section">
     <div class="hero-container">
         <div class="d-flex flex-column gspace-5">
+
+            <!-- Section Header -->
             <div class="row row-cols-xl-2 row-cols-1 grid-spacer-5 m-0">
                 <div class="col col-xl-8 ps-0 pe-0">
                     <div class="d-flex flex-column gspace-2 animate-box animated fast animate__animated" data-animate="animate__fadeInLeft">
@@ -322,7 +326,7 @@
                 </div>
                 <div class="col col-xl-4 ps-0 pe-0">
                     <div class="d-flex flex-column gspace-2 justify-content-end h-100 animate-box animated animate__animated" data-animate="animate__fadeInRight">
-                        <p>{{ $portfolios->caption }}</p>
+                        <p>{{ $portfolios->caption ?? '' }}</p>
                         <div class="link-wrapper">
                             <a href="./portfolio.html">Explore More</a>
                             <i class="fa-solid fa-circle-arrow-right"></i>
@@ -333,19 +337,25 @@
 
             <!-- Portfolio Grid -->
             @php
-                $portfolioItems = array_filter(array_map('trim', explode('.', $portfolios->description)));
-                $portfolioImages = explode(',', $portfolios->image);
+                $portfolioItems = isset($portfolios->description) ? array_filter(array_map('trim', explode('.', $portfolios->description))) : [];
+                $portfolioImages = isset($portfolios->images) ? explode(',', $portfolios->images) : [];
             @endphp
 
             <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 grid-spacer-3">
                 @foreach($portfolioItems as $index => $item)
-                    @if(isset($portfolioImages[$index]) && trim($item) !== '')
+                    @if(trim($item) !== '')
                         <div class="col">
                             <div class="card card-portfolio animate-box animated animate__animated" data-animate="animate__fadeInUp">
                                 <div class="portfolio-image d-flex justify-content-center align-items-center p-2" style="height: 200px; overflow: hidden;">
-                                    <img src="{{ asset('storage/' . trim($portfolioImages[$index])) }}" 
-                                         alt="Portfolio Image" 
-                                         style="max-height: 100%; max-width: 100%; object-fit: cover;">
+                                    @if(isset($portfolioImages[$index]))
+                                        <img src="{{ asset('storage/' . trim($portfolioImages[$index])) }}" 
+                                             alt="Portfolio Image" 
+                                             style="max-height: 100%; max-width: 100%; object-fit: cover;">
+                                    @else
+                                        <img src="{{ asset('storage/default-image.png') }}" 
+                                             alt="Portfolio Image" 
+                                             style="max-height: 100%; max-width: 100%; object-fit: cover;">
+                                    @endif
                                 </div>
                                 <div class="card-body">
                                     <a href="#" class="portfolio-link">{{ $item }}</a>
@@ -355,9 +365,12 @@
                     @endif
                 @endforeach
             </div>
+            <!-- End Portfolio Grid -->
+
         </div>
     </div>
 </div>
+@endif
 
 
 

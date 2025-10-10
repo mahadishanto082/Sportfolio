@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    Contact Us | Create
+    Footer | Create
 @endsection
 
 @section('page-info')
 <div class="br-pagetitle">
     <i class="ion-ios-mail tx-28"></i>
     <div>
-        <h4>Contact Us | Create</h4>
-        <p class="mg-b-0">Here is the contact entry form</p>
+        <h4>Footer | Create</h4>
+        <p class="mg-b-0">Here is the Footer entry form</p>
     </div>
 </div>
 @endsection
@@ -19,8 +19,20 @@
     <div class="col-sm-12 col-xl-12 mg-t-20 mg-xl-t-0">
         <div class="card">
             <div class="card-body">
-            <form action="{{ route('admin.contact.store') }}" method="POST">
+            <form action="{{ route('admin.contact.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Logo <span class="tx-danger"></span></label>
+                                        <input class="form-control" type="file" name="logo" accept="image/*">
+                                        @error('logo')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="mt-2">
+                                        <img id="logoPreview" src="#" alt="Logo Preview" style="max-width: 200px; display: none;">
+                                    </div>
+                                </div>
                     <div class="form-group mb-3">
                         <label>Name <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="Company Name" required>
@@ -66,7 +78,7 @@
                     </div>
 
                     <div class="text-end">
-                        <button type="submit" class="btn btn-info">Save Contact Info</button>
+                        <button type="submit" class="btn btn-info">Save </button>
                     </div>
                 </form>
             </div>
@@ -74,3 +86,24 @@
     </div>
 </div>
 @endsection
+
+@push('_js')
+<script>
+    // Logo Preview
+document.querySelector('input[name="logo"]').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const preview = document.getElementById('logoPreview');
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none';
+        }
+    });
+</script>

@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    Contacts | List
+    Footer Contents | List
 @endsection
 
 @section('page-info')
     <div class="br-pagetitle">
         <i class="icon ion-ios-people-outline"></i>
         <div>
-            <h4>Contacts</h4>
-            <p class="mg-b-0">List of all contacts</p>
+            <h4>Footer Contents</h4>
+            <p class="mg-b-0">List of all footer contents</p>
         </div>
     </div>
 @endsection
@@ -24,6 +24,7 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
+                                    <th>Logo</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -33,9 +34,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($contacts as $key => $contact)
+                                @forelse($footercontents as $key => $contact)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>
+                                            @if($contact->logo)
+                                                <img src="{{ asset('storage/' . $contact->logo) }}" alt="Logo" style="width: 50px; height: auto;">
+                                            @else
+                                                N/A
+                                            @endif
+                                        </td>
                                         <td>{{ $contact->name }}</td>
                                         <td>{{ $contact->email }}</td>
                                         <td>{{ $contact->phone }}</td>
@@ -53,7 +61,6 @@
                                                     Action
                                                 </a>
                                                 <div class="dropdown-menu">
-                                                    
                                                     <a class="dropdown-item" href="{{ route('admin.contact.edit', $contact->id) }}">
                                                         <i class="fa fa-edit"></i> Edit
                                                     </a>
@@ -66,7 +73,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="7" class="text-center">No contacts found</td>
+                                        <td colspan="8" class="text-center">No footer contents found</td>
                                     </tr>
                                 @endforelse
                             </tbody>

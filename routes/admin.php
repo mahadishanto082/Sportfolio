@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\TechController;  
 use App\Http\Controllers\Admin\HeaderContentController;
-use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\FooterContentController;
 use App\Http\Controllers\Admin\ContactMessageController;
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -31,5 +31,6 @@ Route::resource('portfolio', PortfolioController::class);
 Route::resource('packages',PackageController::class);
 Route::resource('tech', TechController::class);
 Route::resource('header-content', HeaderContentController::class);
-Route::resource('contact', ContactController::class);
+Route::resource('contact', FooterContentController::class);
+
 Route::resource('contact-message', ContactMessageController::class);
