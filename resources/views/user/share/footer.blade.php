@@ -10,7 +10,8 @@
                         <div class="col col-xl-4">
                             <div class="footer-logo-container">
                                 <div class="logo-container-footer">
-                                  <image src="{{ asset($footer->logo) }}" alt="logo" class="logo-footer"/>
+                                <img src="{{ asset($footer?->logo ?? 'default-logo.png') }}" alt="logo" class="logo-footer"/>
+
                                 </div>
                                 <h4>Stradig Tech</h4>
                                 <p>

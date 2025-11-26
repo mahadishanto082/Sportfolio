@@ -11,4 +11,15 @@ class UserController extends Controller
     {
         return view('user.home');
     }
+    public function about()
+    {
+        return view('user.pages.about');
+    }
+    public function services()
+    {
+        return view('user.pages.services');
+    }
+
+
+
 }

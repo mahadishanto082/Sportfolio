@@ -234,6 +234,13 @@
 
         </div><!-- flex row -->
     </div>
+    <div class="mt-4 text-center animate-box animate__animated" data-animate="animate__fadeInUp">
+    <a href="{{ route('pages.about') }}" >
+        Learn More About Us
+    </a>
+</div>
+
+
 </div>
 
    
@@ -295,11 +302,15 @@
             @endif
         @endforeach
     </div>
+    <div class="mt-4 animate-box animate__animated" data-animate="animate__fadeInUp">
+    <a href="{{ route('pages.services') }}" >
+        Learn More About Our Services
+    </a>
 </div>
 
-                    <div class="service-link-footer">
-                        <p>Need a custom solution? Let's create a strategy tailored for your business. <a href="./contact.html">Get a Free Strategy Call</a></p>
-                    </div>
+</div>
+
+                   
                 </div>
             </div>
         </div>
@@ -448,4 +459,3 @@
 </body>
 </html>
 @endsection
-
