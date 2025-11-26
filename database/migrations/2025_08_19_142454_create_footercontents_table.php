@@ -6,14 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('footercontents', function (Blueprint $table) {
             $table->id();
-            $table->logon('logo')->nullable();
+            $table->string('logo')->nullable(); // FIXED
             $table->string('name');
             $table->string('email');
             $table->string('phone')->nullable();
@@ -23,11 +20,8 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('footercontents'); // FIXED
     }
 };

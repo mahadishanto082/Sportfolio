@@ -20,7 +20,9 @@
         $pages = [
             'about' => 'About Us',
             'services' => 'Services',
-            'portfolio' => 'Portfolio'
+            'portfolio' => 'Portfolio',
+            'testimonials' => 'Testimonial',
+            'contact' => 'Contact Us'
         ];
     @endphp
 

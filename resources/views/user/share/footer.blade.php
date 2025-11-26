@@ -1,6 +1,6 @@
 <div class="section-footer">
     @php
-    $footer = DB::table('footers')->first();
+    $footer = DB::table('footercontents')->first();
     @endphp
     <div class="bg-footer-wrapper">
         <div class="bg-footer">
@@ -48,7 +48,7 @@
                             <div class="footer-contact-container">
                                 <h5>Contact Info</h5>
                                 <ul class="contact-list">
-                                    <li>{{ $footer-> }}</li>
+                                   
                                     <li>+1 234 567 890</li>
                                     <li>123 Digital Street, New York, USA</li>
                                 </ul>

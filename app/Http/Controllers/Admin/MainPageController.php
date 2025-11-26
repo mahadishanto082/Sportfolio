@@ -7,6 +7,7 @@ use App\Services\Admin\MainPageService;
 use App\Models\AboutMain;
 use App\Models\ServicesMain;
 use App\Models\PortfolioMain;
+use App\Models\TestimonialsMain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -25,11 +26,13 @@ class MainPageController extends Controller
         $services = $this->mainPageService->getServices();
         $about = $this->mainPageService->getAbout();
         $portfolio = $this->mainPageService->getPortfolio();
+        $testimonials = $this->mainPageService->getTestimonials(); // Ensure this method exists in MainPageService
     
         $mainPages = [
             'about' => AboutMain::first(), 
             'services' => ServicesMain::first(),
             'portfolio' => PortfolioMain::first(),
+            'testimonial' => TestimonialsMain::first(),
         ];
         
         return view('admin.mainpages.index', compact('mainPages'));
@@ -44,6 +47,13 @@ class MainPageController extends Controller
         } elseif ('portfolio' == request()->get('type')) {
             return view('admin.mainpages.portfolio.create');
         }
+        elseif ('testimonials' == request()->get('type')) {
+            return view('admin.mainpages.testimonial.create');
+        }
+        elseif ('contact' == request()->get('type')) {
+            return view('admin.mainpages.contactUs.create');
+        }
+
     }
     public function store(Request $request)
     {
@@ -97,6 +107,7 @@ class MainPageController extends Controller
         
             return redirect()->route('admin.main-page.index')->with('success', 'About content created successfully.');
         }
+        
 
 
 
@@ -185,7 +196,32 @@ class MainPageController extends Controller
             
             return redirect()->route('admin.main-page.index')->with('success', 'Portfolio content created successfully.');
              }
+             elseif ('testimonial' == $request->get('type')) {
+                $request->validate([
+                    'name' => 'required|string|max:255',
+                    'role' => 'required|string|max:255',
+                    'message' => 'required|string',
+                    'user_rating' => 'nullable|integer|min:1|max:5',
+                    'admin_rating' => 'nullable|integer|min:1|max:5',
+                    'photo' => 'nullable|image|max:2048',
+                    'status' => 'required|in:pending,approved,rejected',
+                ]);
+            
+                $data = $request->all();
+            
+                if ($request->hasFile('photo')) {
+                    $data['photo'] = $request->photo->store('testimonials', 'public');
+                }
+            
+                TestimonialsMain::create($data);
+            
+                return redirect()->route('admin.testimonials.index')
+                                 ->with('success', 'Testimonial added successfully!');
             }
+
+    }
+
+
         
     public function edit($id)
     {

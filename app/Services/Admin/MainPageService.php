@@ -7,8 +7,8 @@ use App\Models\About;
 use App\Models\AboutMain;
 use App\Models\ServicesMain;  
 use App\Models\PortfolioMain;  
-
 use App\Models\Portfolio;
+use App\Models\TestimonialsMain;
 
 
 class MainPageService
@@ -81,5 +81,20 @@ public function updateServices($id, $data)
         $portfolio->update($data);
         return $portfolio;
     }
+    public function getAllPortfolioItems()
+    {
+        return Portfolio::all();
+    }
+    /**
+     * Get all testimonials
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getTestimonials()
+    {
+        return TestimonialsMain::all();
+    }
+    
+
     
 }
