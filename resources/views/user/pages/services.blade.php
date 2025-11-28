@@ -51,28 +51,28 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <div class="card services-main-card">
-                    <div class="card-body p-5">
+                <div class="card services-main-card" style="background-color: transparent;">
+                    <div class="card-body p-5" >
                         <!-- Services Header -->
-                        <div class="services-header text-center mb-5">
+                        <div class="services-header text-center mb-5" >
                             <div class="sub-heading">Our Services</div>
-                            <h2>What We Offer</h2>
-                            <p class="text-muted">Comprehensive digital solutions tailored to your business needs</p>
+                            <h2 style="color:#ffffff">What We Offer</h2>
+                            <p >Comprehensive digital solutions tailored to your business needs</p>
                         </div>
                         
                         <!-- Services Grid -->
-                        <div class="services-grid">
-                            <div class="row justify-content-center">
+                        <div class="services-grid" >
+                            <div class="row justify-content-center" >
                                 <!-- Website Development -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-code"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">Website Development</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">Website Development</h4>
                                             <p class="mb-3">We develop responsive, secure, and scalable websites tailored to your business needs. Our solutions combine performance with functionality.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -81,14 +81,14 @@
                                 
                                 <!-- Software Development -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-laptop-code"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">Software Development</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">Software Development</h4>
                                             <p class="mb-3">Our custom software solutions are designed to streamline business operations and boost efficiency with reliable, adaptable systems.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -97,14 +97,14 @@
                                 
                                 <!-- App Development -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-mobile-alt"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">App Development</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">App Development</h4>
                                             <p class="mb-3">We build powerful, user-friendly mobile applications for both Android and iOS with speed, security, and functionality at the forefront.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -113,14 +113,14 @@
                                 
                                 <!-- Website Design -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-paint-brush"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">Website Design</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">Website Design</h4>
                                             <p class="mb-3">We craft modern, visually appealing website designs that capture attention and build trust while maximizing user engagement.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -129,14 +129,14 @@
                                 
                                 <!-- Graphics Design -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-palette"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">Graphics Design</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">Graphics Design</h4>
                                             <p class="mb-3">Our graphic design services bring your brand's vision to life with creativity and precision across all branding materials.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -145,14 +145,14 @@
                                 
                                 <!-- Digital Marketing -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-bullhorn"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">Digital Marketing</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">Digital Marketing</h4>
                                             <p class="mb-3">We deliver data-driven digital marketing strategies that elevate your online presence and drive measurable business growth.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -161,14 +161,14 @@
                                 
                                 <!-- SEO Services -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-search"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">SEO Services</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">SEO Services</h4>
                                             <p class="mb-3">Our SEO strategies are crafted to improve your search engine rankings and organic traffic through comprehensive optimization.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -177,14 +177,14 @@
                                 
                                 <!-- UI/UX Design -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-user-circle"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">UI/UX Design</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">UI/UX Design</h4>
                                             <p class="mb-3">We design digital experiences that are intuitive, user-friendly, and conversion-focused to enhance usability and engagement.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -193,14 +193,14 @@
                                 
                                 <!-- Video Editing -->
                                 <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="service-card card h-100 text-center">
+                                    <div class="service-card card h-100 text-center" style="background-color: transparent;">
                                         <div class="card-body">
                                             <div class="service-icon-wrapper d-flex justify-content-center mb-3">
                                                 <div class="service-icon">
                                                     <i class="fas fa-video"></i>
                                                 </div>
                                             </div>
-                                            <h4 class="mb-3">Video Editing</h4>
+                                            <h4 class="mb-3" style="color:#ffffff">Video Editing</h4>
                                             <p class="mb-3">Our video editing services transform raw footage into polished, professional content that connects with your audience.</p>
                                             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
@@ -233,6 +233,7 @@
 
 .service-icon-wrapper {
     width: 100%;
+    background: transparent;
 }
 
 .service-icon {
@@ -241,12 +242,13 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    background: transparent;
     
 }
 
 .service-icon i {
     font-size: 3rem;
-   
+   background: transparent;
     transition: all 0.3s ease;
 }
 
