@@ -4,10 +4,10 @@
             <div class="logo-container">
                 <a class="navbar-brand" >
              
-                <!-- <a href="{{ route('home') }}">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('storage/' . $headerContent->logo) }}" alt="Logo" height="100">
                  </a>
-               -->
+              
 
                 </a>
             </div>
