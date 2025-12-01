@@ -20,6 +20,11 @@ class HeaderContentController extends Controller
         $headerContent = HeaderContent::first();
         return view('admin.headercontent.create', compact('headerContent'));
     }
+    public function edit($id)
+    {
+        $headerContent = HeaderContent::findOrFail($id);
+        return view('admin.headercontent.edit', compact('headerContent'));
+    }
 
     public function store(Request $request)
     {

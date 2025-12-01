@@ -259,7 +259,7 @@
                         <div class="d-flex flex-column gspace-2 justify-content-end h-100 animate-box animated animate__animated" data-animate="animate__fadeInRight">
                             <p>{{ $portfolios->caption ?? '' }}</p>
                             <div class="link-wrapper">
-                                <a href="./portfolio.html">Explore More</a>
+                                <a href= "{{ route("pages.projects") }}" >Explore More</a>
                                 <i class="fa-solid fa-circle-arrow-right"></i>
                             </div>
                         </div>
@@ -341,7 +341,20 @@
                         </div>
                     @endforeach
                 </div>
+                
             </div>
+            <!-- contact button-->
+            <div class="mt-5 text-center animate-box animate__animated" data-animate="animate__fadeInUp">
+    
+    <h3 class="mb-2">Ready for your project?</h3>
+    <p >Contact us for more information</p>
+
+    <a href="{{ route('pages.contact') }}" >
+        Contact Us
+    </a>
+
+</div>
+
         </div>
     </div>
 </main>

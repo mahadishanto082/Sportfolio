@@ -11,3 +11,5 @@ Route::get('admin/login', [AdminLoginController::class, 'showLoginForm'])->name(
 
 Route::get('/pages/about', [UserController::class, 'about'])->name('pages.about');
 Route::get('/pages/services', [UserController::class, 'services'])->name('pages.services');
+Route::get('/pages/projects', [UserController::class, 'projects'])->name('pages.projects');
+Route::get('/pages/contact', [UserController::class, 'contact'])->name('pages.contact');

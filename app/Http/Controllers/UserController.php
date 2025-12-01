@@ -19,6 +19,18 @@ class UserController extends Controller
     {
         return view('user.pages.services');
     }
+    public function contact()
+    {
+        return view('user.pages.contact');
+    }
+    // public function faq()
+    // {
+    //     return view('user.pages.faq');
+    // }
+    public function projects()
+    {
+        return view('user.pages.projects');
+    }
 
 
 
