@@ -330,13 +330,13 @@
                 <div class="chooseus-card-container flex-grow-1">
                     <h2>{{ $choose->sub_title }}</h2>
                     <div class="d-flex flex-wrap gap-3 justify-content-center">
-                        @foreach($semiItems as $index => $semi_description)
+                        @foreach($semiItems as $index => $icon)
                             <div class="card card-chooseus animate-box animate__animated text-center p-3" 
                                  data-animate="animate__fadeInLeft" 
                                  style="width: 220px; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <div class="chooseus-icon-wrapper mb-3">
                                     <div class="chooseus-icon-layout">
-                                    {{ asset($chooseIcons[$index]) }}
+                                    <!-- {{ asset($chooseIcons[$index]) }} -->
 
                                     <img src="{{ asset($chooseIcons[$index] ?? 'image/default-icon.png') }}"
                                         alt="Why Choose Us Icon"
