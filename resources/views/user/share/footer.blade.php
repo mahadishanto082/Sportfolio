@@ -11,7 +11,8 @@
                             <div class="footer-logo-container">
                                 <div class="logo-container-footer">
                                 <a href="{{ route('home') }}">
-                     <img src="{{ asset('public/' . $headerContent->logo) }}" alt="Logo">
+                     <img src="{{ asset('public/' . $headerContent->logo) }}" alt="Logo" height="150px" weight="150px">
+
                     </a> 
                 
                                 </div>
