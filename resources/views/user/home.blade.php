@@ -215,11 +215,17 @@
     
     $chooseIcons = ['image/Icon-2.png', 'image/icon-1.png', 'image/Icon-3.png', 'image/icon-4.png', 'image/icon-5.png'];
     $packageIcons = ['./image/Icon-5.png', './image/Icon-6.png', './image/Icon-4.png', './image/digital-marketing-icons-F4LJ4W8.png'];
+    $cleanSemiDescription = trim($choose->semi_description, " .t\n\r\t\v\0");
+    $semiItems = array_filter(array_map('trim', explode('.', $cleanSemiDescription)));
+    
+    // Also clean the main description
+    $cleanDescription = trim($choose->description, " .t\n\r\t\v\0");
+    $descriptionItems = array_filter(array_map('trim', explode('.', $cleanDescription)));
 @endphp
 
 <main>
     <!-- Banner Section -->
-    <!-- <div class="section-banner">
+    <div class="section-banner">
         <div class="banner-video-container keep-dark animate-box animated animate__animated" data-animate="animate__fadeInUp">
             <div id="banner-video-background"></div>
             <div class="hero-container position-relative">
@@ -264,7 +270,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Expertise Section -->
     <div class="section">
