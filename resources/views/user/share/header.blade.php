@@ -4,13 +4,13 @@
             <div class="logo-container">
                 <a class="navbar-brand" >
 
-                <p>Logo path: {{ $headerContent->logo }}</p>
+                
              
-                    <!-- <a href="{{ route('home') }}">
-                        <img src="{{ asset('storage/' . $headerContent->logo) }}" alt="Logo" height="100">
-                    </a> -->
-                    <!-- <img src="{{ asset($headerContent->logo) }}" alt="Logo"> -->
-                    <img src="{{ asset('public/' . $headerContent->logo) }}" alt="Logo">
+                     <a href="{{ route('home') }}">
+                     <img src="{{ asset('public/' . $headerContent->logo) }}" alt="Logo">
+                    </a> 
+                    
+                    
 
 
 

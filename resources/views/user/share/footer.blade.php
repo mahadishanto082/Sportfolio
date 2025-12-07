@@ -10,7 +10,10 @@
                         <div class="col col-xl-4">
                             <div class="footer-logo-container">
                                 <div class="logo-container-footer">
-                                <img src="{{ asset('storage/' . $headerContent->logo) }}" alt="Logo" height="100">
+                                <a href="{{ route('home') }}">
+                     <img src="{{ asset('public/' . $headerContent->logo) }}" alt="Logo">
+                    </a> 
+                
                                 </div>
                                 <h4>Stradig Tech</h4>
                                 <p>
