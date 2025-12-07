@@ -378,7 +378,7 @@
                             </div>
                         </div>
                         <div class="image-container">
-                            <img src="{{ asset('storage/' . $choose->image) }}" alt="Logo" height="600" width="800">
+                            <img src="{{ asset('public/' . $choose->image) }}" alt="Logo" height="600" width="800">
                             <div class="card-chooseus-cta-layout">
                                 <div class="chooseus-cta-spacer"></div>
                             </div>
