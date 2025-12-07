@@ -1,6 +1,210 @@
 @extends('layouts.website')
 
 @section('content')
+<style>
+    /* Responsive CSS - Add this at the beginning of your content section */
+    @media (max-width: 767.98px) {
+        /* Banner fixes */
+        .title-heading-banner {
+            font-size: 24px !important;
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        .banner-content p {
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .banner-heading {
+            flex-direction: column;
+        }
+        
+        .banner-reviewer {
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .banner-reviewer .avatar {
+            width: 40px !important;
+            height: 40px !important;
+        }
+        
+        /* Expertise section */
+        .expertise-title {
+            text-align: center;
+        }
+        
+        .expertise-list h5 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .check-list {
+            padding-left: 20px !important;
+            margin-left: 0 !important;
+        }
+        
+        .check-list li {
+            white-space: normal !important;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+        
+        /* Why Choose Us */
+        .chooseus-card-container {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .chooseus-card-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-chooseus {
+            width: 100% !important;
+            max-width: 300px;
+            margin: 0 auto 15px !important;
+            min-height: auto !important;
+        }
+        
+        .chooseus-content-container {
+            width: 100%;
+        }
+        
+        .chooseus-content-container h2,
+        .chooseus-content-container p {
+            text-align: center;
+        }
+        
+        /* Services */
+        .card-service {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        
+        .service-title h4 {
+            font-size: 18px;
+        }
+        
+        /* Portfolio */
+        .portfolio-image {
+            height: 150px !important;
+        }
+        
+        .card-portfolio {
+            margin-bottom: 20px;
+        }
+        
+        /* Technology */
+        .card-blog {
+            margin-bottom: 20px;
+        }
+        
+        .blog-image {
+            height: 80px !important;
+        }
+        
+        /* General fixes */
+        .title-heading {
+            font-size: 28px !important;
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        .sub-heading {
+            justify-content: center;
+            display: flex;
+        }
+        
+        .hero-container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        /* Button fixes */
+        .btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        
+        .d-flex.flex-md-row {
+            flex-direction: column !important;
+        }
+        
+        /* Grid fixes */
+        .row-cols-md-3 > .col,
+        .row-cols-md-2 > .col {
+            width: 100% !important;
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+        }
+        
+        /* Image fixes */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Spacing fixes */
+        .gspace-2 > * {
+            margin-bottom: 15px;
+        }
+        
+        .gspace-3 > * {
+            margin-bottom: 20px;
+        }
+        
+        .gspace-5 > * {
+            margin-bottom: 30px;
+        }
+    }
+    
+    /* Tablet fixes */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .title-heading-banner {
+            font-size: 32px !important;
+        }
+        
+        .title-heading {
+            font-size: 32px !important;
+        }
+        
+        .card-chooseus {
+            width: 180px !important;
+            min-height: 200px !important;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+        }
+    }
+    
+    /* Extra small devices */
+    @media (max-width: 575.98px) {
+        .title-heading-banner {
+            font-size: 22px !important;
+        }
+        
+        .title-heading {
+            font-size: 24px !important;
+        }
+        
+        .card-chooseus {
+            width: 100% !important;
+            min-height: 180px !important;
+            padding: 15px !important;
+        }
+        
+        .section {
+            padding: 30px 0 !important;
+        }
+    }
+</style>
 @php
     $title = DB::table('titlepages')->first();
     $service = DB::table('services')->first();
