@@ -213,7 +213,7 @@
     $portfolios = DB::table('portfolios')->first();
     $technologies = DB::table('techs')->where('status', 'Active')->get();
     
-    $chooseIcons = ['image/Icon-2.png', 'image/icon-1.png', 'image/Icon-3.png', 'image/icon-4.png', 'image/icon-5.png'];
+    $chooseIcons = ['/image/Icon-2.png', 'image/icon-1.png', 'image/Icon-3.png', 'image/icon-4.png', 'image/icon-5.png'];
     $packageIcons = ['./image/Icon-5.png', './image/Icon-6.png', './image/Icon-4.png', './image/digital-marketing-icons-F4LJ4W8.png'];
     
 @endphp
@@ -336,12 +336,11 @@
                                  style="width: 220px; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <div class="chooseus-icon-wrapper mb-3">
                                     <div class="chooseus-icon-layout">
-                                        <div class="chooseus-icon">
-                                            <img src="{{ asset($chooseIcons[$index] ?? 'default-icon.png') }}" 
-                                                 alt="Why Choose Us Icon" 
-                                                 class="img-fluid" 
-                                                 style="width:60px; height:60px;">
-                                        </div>
+                                    <img src="{{ asset($chooseIcons[$index] ?? 'image/default-icon.png') }}"
+     alt="Why Choose Us Icon"
+     class="img-fluid"
+     style="width:60px; height:60px;">
+
                                     </div>
                                 </div>
                                 <div class="card-body d-flex flex-column justify-content-center align-items-center p-0">
