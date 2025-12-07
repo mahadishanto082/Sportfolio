@@ -4,7 +4,8 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <a href="{{ route('home') }}">
-                <img src="{{ asset('storage/' . $headerContent->logo) }}" alt="Logo" height="100">
+                <!-- <img src="{{ asset('storage/' . $headerContent->logo) }}" alt="Logo" > -->
+                <img src="{{ asset('public/' . $headerContent->logo) }}" alt="Logo" height="100">
             </a>
 
             <button class="close-btn"><span>X</span></button>

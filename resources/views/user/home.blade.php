@@ -339,9 +339,9 @@
                                     {{ asset($chooseIcons[$index]) }}
 
                                     <img src="{{ asset($chooseIcons[$index] ?? 'image/default-icon.png') }}"
-     alt="Why Choose Us Icon"
-     class="img-fluid"
-     style="width:60px; height:60px;">
+                                        alt="Why Choose Us Icon"
+                                        class="img-fluid"
+                                        style="width:60px; height:60px;">
 
                                     </div>
                                 </div>
