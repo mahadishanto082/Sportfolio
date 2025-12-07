@@ -18,9 +18,10 @@
     <div class="sidebar-overlay"></div>
     <div class="sidebar">
         <div class="sidebar-header">
-            <div class="logo">
-                <img src="./image/marko-logo.png" class="site-logo img-fluid logo" alt="Logo">
-            </div>
+        <a href="{{ route('home') }}">
+                        <img src="{{ asset('storage/' . $headerContent->logo) }}" alt="Logo" height="100">
+                    </a>
+              
             <button class="close-btn"><span>X</span></button>
         </div>
         <ul class="menu">
@@ -66,3 +67,4 @@
     </div>
 </div>
 
+t
