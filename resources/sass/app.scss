@@ -6,3 +6,17 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.dark-theme {
+    background-color: #111 !important;
+    color: #fff !important;
+}
+
+.dark-theme a {
+    color: #fff !important;
+}
+
+.dark-theme .navbar {
+    background-color: #222 !important;
+}
+
