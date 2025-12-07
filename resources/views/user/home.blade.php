@@ -529,7 +529,7 @@
                         <div class="col">
                             <div class="card card-blog animate-box animated animate__animated" data-animate="animate__fadeInUp">
                                 <div class="blog-image d-flex justify-content-center align-items-center p-2" style="height: 100px;">
-                                    <img src="{{ asset('storage/' . $tech->logo_image) }}" 
+                                    <img src="{{ asset('storage/public' . $tech->logo_image) }}" 
                                          alt="{{ $tech->name }} Logo" 
                                          style="max-height: 100%; max-width: 100%; object-fit: contain;">
                                 </div>

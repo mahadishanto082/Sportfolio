@@ -50,9 +50,7 @@
                     </button>                      
                 </div>
                 
-                <a href="https://wa.me/01717489175" target="_blank" style="font-size: 40px; color: #25D366;">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+               
 
 </div>
             </div>
