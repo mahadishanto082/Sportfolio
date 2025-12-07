@@ -273,7 +273,7 @@
             <div class="d-flex flex-column flex-xl-row gspace-5">
                 <div class="expertise-img-layout">
                     <div class="image-container expertise-img">
-                        <img src="{{ asset('storage/' . $service->icon) }}" alt="Logo" height="1600" width="1600">
+                        <img src="{{ asset('public/' . $service->icon) }}" alt="Logo" height="1600" width="1600">
                         <div class="expertise-layout">
                             <div class="d-flex flex-column">
                                 <div class="card-expertise-wrapper"></div>
@@ -378,7 +378,7 @@
                             </div>
                         </div>
                         <div class="image-container">
-                            <img src="{{ asset('public/' . $choose->image) }}" alt="Logo" height="600" width="800">
+                            <img src="{{ asset('storage/' . $choose->image) }}" alt="Logo" height="600" width="800">
                             <div class="card-chooseus-cta-layout">
                                 <div class="chooseus-cta-spacer"></div>
                             </div>
