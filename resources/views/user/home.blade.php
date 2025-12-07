@@ -1,7 +1,7 @@
 @extends('layouts.website')
 
 @section('content')
-<style>
+<!-- <style>
     /* Responsive CSS - Add this at the beginning of your content section */
     @media (max-width: 767.98px) {
         /* Banner fixes */
@@ -204,7 +204,7 @@
             padding: 30px 0 !important;
         }
     }
-</style>
+</style> -->
 @php
     $title = DB::table('titlepages')->first();
     $service = DB::table('services')->first();
