@@ -213,7 +213,7 @@
     $portfolios = DB::table('portfolios')->first();
     $technologies = DB::table('techs')->where('status', 'Active')->get();
     
-    $chooseIcons = ['/image/Icon-2.png', 'image/icon-1.png', 'image/Icon-3.png', 'image/icon-4.png', 'image/icon-5.png'];
+    $chooseIcons = ['image/Icon-2.png', 'image/icon-1.png', 'image/Icon-3.png', 'image/icon-4.png', 'image/icon-5.png'];
     $packageIcons = ['./image/Icon-5.png', './image/Icon-6.png', './image/Icon-4.png', './image/digital-marketing-icons-F4LJ4W8.png'];
     
 @endphp
