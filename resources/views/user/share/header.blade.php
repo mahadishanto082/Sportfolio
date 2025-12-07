@@ -3,6 +3,8 @@
         <div class="navbar-container">
             <div class="logo-container">
                 <a class="navbar-brand" >
+
+                <p>Logo path: {{ $headerContent->logo }}</p>
              
                     <a href="{{ route('home') }}">
                         <img src="{{ asset('storage/' . $headerContent->logo) }}" alt="Logo" height="100">
