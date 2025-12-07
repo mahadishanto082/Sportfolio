@@ -219,7 +219,7 @@
 
 <main>
     <!-- Banner Section -->
-    <div class="section-banner">
+    <!-- <div class="section-banner">
         <div class="banner-video-container keep-dark animate-box animated animate__animated" data-animate="animate__fadeInUp">
             <div id="banner-video-background"></div>
             <div class="hero-container position-relative">
@@ -264,7 +264,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Expertise Section -->
     <div class="section">
