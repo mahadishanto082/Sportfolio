@@ -336,6 +336,8 @@
                                  style="width: 220px; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <div class="chooseus-icon-wrapper mb-3">
                                     <div class="chooseus-icon-layout">
+                                    {{ asset($chooseIcons[$index]) }}
+
                                     <img src="{{ asset($chooseIcons[$index] ?? 'image/default-icon.png') }}"
      alt="Why Choose Us Icon"
      class="img-fluid"
