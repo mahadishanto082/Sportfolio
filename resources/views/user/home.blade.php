@@ -422,7 +422,7 @@
                                     <div class="card card-service animate-box animated slow animate__animated" data-animate="animate__fadeInLeft">
                                         <div class="d-flex flex-row justify-content-between gspace-2 gspace-md-3 align-items-center">
                                             <div>
-                                                <div class="service-icon-wrapper">
+                                                <div >
                                                     <div class="service-icon">
                                                         <img src="{{ $packageIcons[$index] ?? './image/default.png' }}" alt="Service Icon" class="img-fluid">
                                                     </div>
