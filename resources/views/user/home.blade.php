@@ -335,7 +335,7 @@
                                  data-animate="animate__fadeInLeft" 
                                  style="width: 220px; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <div class="service-icon-wrapper">
-                                    <div class="chooseus-icon-layout">
+                                    <div class="service-icon-wrapper">
                               
 
                                     <img src="{{ asset($chooseIcons[$index] ?? 'image/default-icon.png') }}"
