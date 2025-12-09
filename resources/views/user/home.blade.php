@@ -327,24 +327,26 @@
 
             <div class="d-flex flex-column flex-xl-row gspace-5">
                 <!-- Left Side: Cards -->
-                <div class="chooseus-card-container flex-grow-1">
+                < class="chooseus-card-container flex-grow-1">
                     <h2>{{ $choose->sub_title }}</h2>
-                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <img class="d-flex flex-wrap gap-3 justify-content-center">
                         @foreach($semiItems as $index => $semi_description)
-                            <div class="card card-chooseus animate-box animate__animated text-center p-3" 
+                            <img class="card card-chooseus animate-box animate__animated text-center p-3" 
                                  data-animate="animate__fadeInLeft" 
                                  style="width: 220px; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                <div class="chooseus-icon-wrapper mb-3">
-                                    <div class="chooseus-icon-layout">
+                                <img class="chooseus-icon-wrapper mb-3">
+                                    <img class="chooseus-icon-layout">
                                     <!-- {{ asset($chooseIcons[$index]) }} -->
 
-                                    <img src="{{ asset($chooseIcons[$index] ?? 'image/default-icon.png') }}"
-                                        alt="Why Choose Us Icon"
-                                        class="img-fluid"
-                                        style="width:60px; height:60px;">
-
-                                    </div>
-                                </div>
+                                        <img src="{{ asset($chooseIcons[$index] ?? 'image/default-icon.png') }}"
+                                            alt="Why Choose Us Icon"
+                                            class="img-fluid"
+                                            style="width:60px; height:60px;">
+                                        </img>
+                                    </img>
+                                </img>
+                            </img>                           
+                        
                                 <div class="card-body d-flex flex-column justify-content-center align-items-center p-0">
                                     <p class="mb-0" style="font-weight: 500; font-size: 16px;">
                                         {{ $semi_description }}.
