@@ -98,11 +98,27 @@
                             Submit Inquiry
                         </button>
                     </form>
+                    <!-- Success Message -->
+                    @if(session('success'))
+                        <div id="success-message" class="alert alert-success" style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+<script>
+    // Auto-hide success message after 5 seconds
+    document.addEventListener('DOMContentLoaded', function() {
+        var successMessage = document.getElementById('success-message');
+        if (successMessage) {
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+            }, 5000); // 5000 milliseconds = 5 seconds
+        }
+    });
 
 @endsection
