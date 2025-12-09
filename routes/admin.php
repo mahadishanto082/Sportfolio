@@ -34,4 +34,5 @@ Route::resource('header-content', HeaderContentController::class);
 Route::resource('contact', FooterContentController::class);
 
 Route::resource('contact-message', ContactMessageController::class);
-Route::delete('contact-message/{id}', [ContactMessageController::class, 'destroy'])->name('contact-message.destroy');
+Route::delete('admin/contact-messages/{id}', [ContactMessageController::class, 'destroy'])
+    ->name('admin.contact-message.destroy');

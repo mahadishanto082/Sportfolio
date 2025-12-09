@@ -23,10 +23,10 @@
         <td>{{ Str::limit($message->message, 50) }}</td>
         <td>
          
-        <a onclick="deleteRow('{{ route('admin.contact-message.destroy', $headercontent->id) }}')" class="dropdown-item" href="javascript:void(0)">
-                                <i class="fa fa-trash"></i> Delete
-                            </a>
-        </td>
+        <a onclick="deleteRow('{{ route('admin.contact-message.destroy', $message->id) }}')"
+           class="dropdown-item" href="javascript:void(0)">
+            <i class="fa fa-trash"></i> Delete
+        </a>
     </tr>
     @endforeach
 </table>
