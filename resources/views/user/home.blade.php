@@ -334,7 +334,7 @@
                             <div class="card card-chooseus animate-box animate__animated text-center p-3" 
                                  data-animate="animate__fadeInLeft" 
                                  style="width: 220px; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                <div class="chooseus-icon-wrapper mb-3">
+                                <div class="service-icon-wrapper">
                                     <div class="chooseus-icon-layout">
                               
 
