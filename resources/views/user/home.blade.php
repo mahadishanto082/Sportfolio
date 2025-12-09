@@ -327,7 +327,7 @@
 
             <div class="d-flex flex-column flex-xl-row gspace-5">
                 <!-- Left Side: Cards -->
-                < class="chooseus-card-container flex-grow-1">
+                <div class="chooseus-card-container flex-grow-1">
                     <h2>{{ $choose->sub_title }}</h2>
                     <img class="d-flex flex-wrap gap-3 justify-content-center">
                         @foreach($semiItems as $index => $semi_description)
@@ -346,7 +346,7 @@
                                     </img>
                                 </img>
                             </img>                           
-                        <<!-- Card Body -->
+                        </div>
                                 <div class="card-body d-flex flex-column justify-content-center align-items-center p-0">
                                     <p class="mb-0" style="font-weight: 500; font-size: 16px;">
                                         {{ $semi_description }}.
