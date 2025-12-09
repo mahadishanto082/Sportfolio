@@ -346,7 +346,7 @@
                                     </img>
                                 </img>
                             </img>                           
-                        
+                        <<!-- Card Body -->
                                 <div class="card-body d-flex flex-column justify-content-center align-items-center p-0">
                                     <p class="mb-0" style="font-weight: 500; font-size: 16px;">
                                         {{ $semi_description }}.
