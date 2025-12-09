@@ -9,7 +9,17 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <style>
+        /* Test Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a !important;
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode * {
+            border-color: #444 !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Header / Navbar -->
