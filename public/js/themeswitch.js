@@ -1,4 +1,6 @@
 // Theme Switch Functionality
+console.log('Theme switcher loaded!');
+
 document.addEventListener('DOMContentLoaded', function() {
     const themeSwitch = document.getElementById('themeSwitch');
     const themeIcon = document.getElementById('themeIcon');
