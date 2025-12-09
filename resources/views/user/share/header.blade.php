@@ -49,6 +49,8 @@
                         <i id="themeIcon" class="fas fa-moon"></i>
                     </button>                      
                 </div>
+            </div>
+            
                 
                
 

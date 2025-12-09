@@ -34,5 +34,6 @@
 
     <!-- JS -->
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/themeswitch.js') }}"></script>
 </body>
 </html>
