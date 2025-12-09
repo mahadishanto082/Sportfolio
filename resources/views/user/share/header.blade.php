@@ -28,17 +28,17 @@
         : (json_decode($headerContent->buttons, true) ?? []);
 @endphp
 
-<ul class="navbar-nav mx-auto">
-    @if(!empty($buttons))
-        @foreach ($buttons as $btn)
-            <li class="nav-item">
-                <a class="nav-link" href="{{ $btn['link'] ?? '#' }}">
-                    {{ $btn['name'] ?? '' }}
-                </a>
-            </li>
-        @endforeach
-    @endif
-</ul>
+                <ul class="navbar-nav mx-auto">
+                    @if(!empty($buttons))
+                        @foreach ($buttons as $btn)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ $btn['link'] ?? '#' }}">
+                                    {{ $btn['name'] ?? '' }}
+                                </a>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
    
 
                   </ul>
@@ -50,7 +50,7 @@
                     </button>                      
                 </div>
             </div>
-            
+
                 
                
 
