@@ -54,7 +54,7 @@
 
                     <h5 class="mb-3">Tell Us About Your Project</h5>
 
-                    <form action="#" method="POST">
+                    <form action="{{ route('contact.messages.store') }}" method="POST">
                         @csrf
 
                         <div class="mb-3">
