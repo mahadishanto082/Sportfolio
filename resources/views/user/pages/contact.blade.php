@@ -76,7 +76,12 @@
                             <label class="form-label">Features You Want</label>
                             <textarea name="features" class="form-control" rows="3"></textarea>
                         </div>
-
+                        <div class="mb-3">
+                            <label class="form-label">Attach Document (optional)</label>
+                            <input type="file" name="attachment" class="form-control" 
+                                accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png">
+                            <small class="text-muted">Accepted formats: PDF, DOC, DOCX, TXT, JPG, PNG (Max: 5MB)</small>
+                         </div>
                         <div class="mb-3">
                             <label class="form-label">Budget (optional)</label>
                             <input type="text" name="budget" class="form-control">

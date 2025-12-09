@@ -1,40 +1,45 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class ContactMessage extends Model
 {
     use HasFactory;
 
+    /**
+     * The table associated with the model.
+     */
+    protected $table = 'contact_messages';
+
+    /**
+     * The attributes that are mass assignable.
+     */
     protected $fillable = [
         'name',
         'email',
-        'phone',
-        'message',
-        'status',
+        'project_idea',
+        'features',
+        'budget',
+        'timeline',
+        'attachment',
     ];
 
     /**
-     * Get a short version of the message.
-     *
-     * @return string
+     * The attributes that should be cast.
      */
-    public function getShortMessageAttribute()
-    {
-        return Str::limit($this->message, 50);
-    }
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
     /**
-     * Check if the message is read.
-     *
-     * @return bool
+     * Get the full URL of the attachment.
      */
-    public function getIsReadAttribute()
+    public function getAttachmentUrlAttribute()
     {
-        return $this->status === 'read';
+        return $this->attachment ? asset('storage/' . $this->attachment) : null;
     }
 }
