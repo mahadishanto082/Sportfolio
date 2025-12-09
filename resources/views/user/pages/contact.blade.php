@@ -54,49 +54,50 @@
 
                     <h5 class="mb-3">Tell Us About Your Project</h5>
 
-                    <form action="{{ route('contact.messages.store') }}" method="POST">
-                        @csrf
+                    <form action="{{ route('contact.messages.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
 
-                        <div class="mb-3">
-                            <label class="form-label">Name *</label>
-                            <input type="text" name="name" class="form-control" required>
-                        </div>
+    <div class="mb-3">
+        <label class="form-label">Name *</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Email *</label>
-                            <input type="email" name="email" class="form-control" required>
-                        </div>
+    <div class="mb-3">
+        <label class="form-label">Email *</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Project Idea *</label>
-                            <textarea name="project_idea" class="form-control" rows="3" required></textarea>
-                        </div>
+    <div class="mb-3">
+        <label class="form-label">Project Idea *</label>
+        <textarea name="project_idea" class="form-control" rows="3" required></textarea>
+    </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Features You Want</label>
-                            <textarea name="features" class="form-control" rows="3"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Attach Document (optional)</label>
-                            <input type="file" name="attachment" class="form-control" 
-                                accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png">
-                            <small class="text-muted">Accepted formats: PDF, DOC, DOCX, TXT, JPG, PNG (Max: 5MB)</small>
-                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Budget (optional)</label>
-                            <input type="text" name="budget" class="form-control">
-                        </div>
+    <div class="mb-3">
+        <label class="form-label">Features You Want</label>
+        <textarea name="features" class="form-control" rows="3"></textarea>
+    </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Timeline (optional)</label>
-                            <input type="text" name="timeline" class="form-control">
-                        </div>
+    <div class="mb-3">
+        <label class="form-label">Attach Document (optional)</label>
+        <input type="file" name="attachment" class="form-control" 
+            accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png">
+        <small class="text-muted">Accepted formats: PDF, DOC, DOCX, TXT, JPG, PNG (Max: 5MB)</small>
+    </div>
 
-                        <button type="submit" class="btn btn-dark ">
-                            Submit Inquiry
-                        </button>
-                    </form>
+    <div class="mb-3">
+        <label class="form-label">Budget (optional)</label>
+        <input type="text" name="budget" class="form-control">
+    </div>
 
+    <div class="mb-3">
+        <label class="form-label">Timeline (optional)</label>
+        <input type="text" name="timeline" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-dark">
+        Submit Inquiry
+    </button>
+</form>
                 </div>
             </div>
 
