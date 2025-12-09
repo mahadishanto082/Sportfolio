@@ -41,6 +41,7 @@ class ContactMessageController extends Controller
         ]);
 
         // Redirect back with success message
-        return redirect()->back()->with('success', 'Your project inquiry has been submitted successfully!');
+        return redirect()->route('pages.contact')->with('success', 'Your message has been sent successfully!');
     }
+
 }
