@@ -4,6 +4,14 @@
 <style>
     /* Responsive CSS - Add this at the beginning of your content section */
     @media (max-width: 767.98px) {
+
+        body,
+        html {
+            background-color: #0A0A0A !important;
+            color: #ffffff !important;
+        }
+
+        
         /* Banner fixes */
         .title-heading-banner {
             font-size: 24px !important;
