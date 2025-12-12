@@ -24,6 +24,33 @@
     .chooseus-content-container,
     .chooseus-card-container {
         background-color: transparent !important;
+        /* Header + Navbar dark fix */
+header,
+.navbar,
+.navbar-nav,
+.navbar-collapse,
+.mobile-header,
+.mobile-navbar {
+    background-color: #0A0A0A !important;
+    color: #ffffff !important;
+}
+
+/* Sidebar / Offcanvas dark fix */
+.sidebar,
+.mobile-sidebar,
+.offcanvas,
+.offcanvas-header,
+.offcanvas-body {
+    background-color: #0A0A0A !important;
+    color: #ffffff !important;
+}
+
+/* Make nav links white */
+.nav-link,
+.nav-item a {
+    color: #ffffff !important;
+}
+
     }
 
         
