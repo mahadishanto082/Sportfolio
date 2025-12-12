@@ -232,27 +232,6 @@
 /* Extra small devices */
 @media (max-width: 575.98px) {
 
-    .section-footer,
-    .section-footer .bg-footer-wrapper,
-    .section-footer .bg-footer,
-    .section-footer .hero-container,
-    .section-footer .card,
-    .section-footer .card-service,
-    .section-footer .card-chooseus,
-    .section-footer .card-portfolio,
-    .section-footer .card-blog {
-        background-color: #0A0A0A !important;
-        color: #ffffff !important;
-    }
-
-    /* Footer links white */
-    .section-footer a,
-    .section-footer .footer-list a,
-    .section-footer .contact-list a,
-    .section-footer .legal-link,
-    .section-footer * {
-        color: #ffffff !important;
-    }
 }
 
 </style>
