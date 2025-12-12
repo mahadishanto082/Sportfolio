@@ -15,11 +15,6 @@
     /* Transparent backgrounds for content */
     .container,
     .section,
-    /* .card,
-    .card-service,
-    .card-chooseus,
-    .card-portfolio,
-    .card-blog, */
     .hero-container,
     .content-section,
     .chooseus-content-container,
@@ -33,7 +28,6 @@
     .navbar,
     .navbar-nav,
     .navbar-collapse,
-   
     .sidebar,
     .mobile-sidebar,
     .offcanvas,
@@ -50,6 +44,53 @@
     .offcanvas .nav-link,
     .offcanvas .nav-item a {
         color: #ffffff !important;
+    }
+
+    /* Footer dark theme */
+    footer,
+    .footer,
+    .footer-section,
+    .footer-container,
+    .footer-widget,
+    .footer-links,
+    .footer-copyright,
+    .footer-bottom {
+        background-color: #0A0A0A !important;
+        color: #ffffff !important;
+    }
+
+    /* Footer links and text white */
+    footer a,
+    .footer a,
+    .footer-link,
+    .footer-links a,
+    .footer-widget a,
+    .footer-copyright,
+    .footer-bottom p,
+    .footer h3,
+    .footer h4,
+    .footer h5,
+    .footer h6,
+    .footer p,
+    .footer span,
+    .footer li,
+    .footer address {
+        color: #ffffff !important;
+    }
+
+    /* Footer social icons white */
+    .social-icons a,
+    .footer-social a,
+    .social-links a {
+        color: #ffffff !important;
+    }
+
+    /* Remove any borders or shadows that might not look good on dark */
+    footer .card,
+    .footer-widget,
+    .footer-links {
+        background-color: transparent !important;
+        border-color: #333 !important;
     }
 
     /* Banner fixes */
@@ -214,6 +255,18 @@
 
 /* Tablet fixes */
 @media (min-width: 768px) and (max-width: 991.98px) {
+    /* Footer tablet adjustments */
+    footer,
+    .footer {
+        background-color: #0A0A0A !important;
+        color: #ffffff !important;
+    }
+    
+    footer a,
+    .footer a {
+        color: #ffffff !important;
+    }
+
     .title-heading-banner {
         font-size: 32px !important;
     }
@@ -234,6 +287,18 @@
 
 /* Extra small devices */
 @media (max-width: 575.98px) {
+    /* Footer extra small adjustments */
+    footer,
+    .footer {
+        background-color: #0A0A0A !important;
+        color: #ffffff !important;
+    }
+    
+    footer a,
+    .footer a {
+        color: #ffffff !important;
+    }
+
     .title-heading-banner {
         font-size: 22px !important;
     }
@@ -252,8 +317,22 @@
         padding: 30px 0 !important;
     }
 }
-</style>
 
+/* General footer dark theme for all mobile sizes */
+@media (max-width: 991.98px) {
+    footer,
+    .footer,
+    .footer-section,
+    .footer-container {
+        background-color: #0A0A0A !important;
+    }
+    
+    footer *,
+    .footer * {
+        color: #ffffff !important;
+    }
+}
+</style>
 @php
     $title = DB::table('titlepages')->first();
     $service = DB::table('services')->first();
