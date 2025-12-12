@@ -15,11 +15,11 @@
     /* Transparent backgrounds for content */
     .container,
     .section,
-    .card,
+    /* .card,
     .card-service,
     .card-chooseus,
     .card-portfolio,
-    .card-blog,
+    .card-blog, */
     .hero-container,
     .content-section,
     .chooseus-content-container,
@@ -33,6 +33,7 @@
     .navbar,
     .navbar-nav,
     .navbar-collapse,
+    .footer,
     .sidebar,
     .mobile-sidebar,
     .offcanvas,
