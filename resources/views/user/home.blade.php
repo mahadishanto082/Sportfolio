@@ -27,13 +27,29 @@
         background-color: transparent !important;
         color: #ffffff !important;
     }
+    /* Footer dark background and white text */
+.footer {
+    background-color: #0A0A0A !important;
+    color: #ffffff !important;
+}
+
+/* Make all footer links white */
+.footer a {
+    color: #ffffff !important;
+}
+
+/* Optional: make all footer text inside span, p, li white */
+.footer * {
+    color: #ffffff !important;
+}
+
 
     /* Header & Sidebar dark */
     header,
     .navbar,
     .navbar-nav,
     .navbar-collapse,
-    .footer,
+   
     .sidebar,
     .mobile-sidebar,
     .offcanvas,
