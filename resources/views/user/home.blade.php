@@ -254,84 +254,12 @@
 }
 
 /* Tablet fixes */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    /* Footer tablet adjustments */
-    footer,
-    .footer {
-        background-color: #0A0A0A !important;
-        color: #ffffff !important;
-    }
-    
-    footer a,
-    .footer a {
-        color: #ffffff !important;
-    }
 
-    .title-heading-banner {
-        font-size: 32px !important;
-    }
-
-    .title-heading {
-        font-size: 32px !important;
-    }
-
-    .card-chooseus {
-        width: 180px !important;
-        min-height: 200px !important;
-    }
-
-    .btn {
-        padding: 12px 24px;
-    }
-}
 
 /* Extra small devices */
-@media (max-width: 575.98px) {
-    /* Footer extra small adjustments */
-    footer,
-    .footer {
-        background-color: #0A0A0A !important;
-        color: #ffffff !important;
-    }
-    
-    footer a,
-    .footer a {
-        color: #ffffff !important;
-    }
 
-    .title-heading-banner {
-        font-size: 22px !important;
-    }
-
-    .title-heading {
-        font-size: 24px !important;
-    }
-
-    .card-chooseus {
-        width: 100% !important;
-        min-height: 180px !important;
-        padding: 15px !important;
-    }
-
-    .section {
-        padding: 30px 0 !important;
-    }
-}
 
 /* General footer dark theme for all mobile sizes */
-@media (max-width: 991.98px) {
-    footer,
-    .footer,
-    .footer-section,
-    .footer-container {
-        background-color: #0A0A0A !important;
-    }
-    
-    footer *,
-    .footer * {
-        color: #ffffff !important;
-    }
-}
 </style>
 @php
     $title = DB::table('titlepages')->first();
