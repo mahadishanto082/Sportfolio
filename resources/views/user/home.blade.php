@@ -6,10 +6,25 @@
     @media (max-width: 767.98px) {
 
         body,
-        html {
-            background-color: #0A0A0A !important;
-            color: #ffffff !important;
-        }
+    html {
+        background-color: #0A0A0A !important;
+        color: #ffffff !important;
+    }
+
+    /* Add this ↓↓↓ */
+    .container,
+    .section,
+    .card,
+    .card-service,
+    .card-chooseus,
+    .card-portfolio,
+    .card-blog,
+    .hero-container,
+    .content-section,
+    .chooseus-content-container,
+    .chooseus-card-container {
+        background-color: transparent !important;
+    }
 
         
         /* Banner fixes */
