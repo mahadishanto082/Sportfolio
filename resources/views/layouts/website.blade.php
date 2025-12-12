@@ -22,18 +22,7 @@
         color: #ffffff !important;
     }
 </style> -->
-<style>.section-footer,
-.section-footer * {
-    background-color: #0A0A0A !important;
-    color: #ffffff !important;
-}
 
-.section-footer a,
-.section-footer .footer-list a,
-.section-footer .contact-list a,
-.section-footer .legal-link {
-    color: #ffffff !important;
-}</style>
 </head>
 <body>
     <!-- Header / Navbar -->
@@ -107,6 +96,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
   </script> -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const footer = document.querySelector('.section-footer');
+        if (footer) {
+            footer.style.backgroundColor = '#0A0A0A';
+            footer.style.color = '#ffffff';
+            footer.querySelectorAll('a').forEach(a => a.style.color = '#ffffff');
+        }
+    });
+</script>
+
 
 </body>
 </html>
