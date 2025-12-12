@@ -22,6 +22,18 @@
         color: #ffffff !important;
     }
 </style> -->
+<style>.section-footer,
+.section-footer * {
+    background-color: #0A0A0A !important;
+    color: #ffffff !important;
+}
+
+.section-footer a,
+.section-footer .footer-list a,
+.section-footer .contact-list a,
+.section-footer .legal-link {
+    color: #ffffff !important;
+}</style>
 </head>
 <body>
     <!-- Header / Navbar -->
