@@ -615,7 +615,7 @@
     </div>
 </main>
 
-<script src="js/vendor/jquery.min.js"></script>
+<!-- <script src="js/vendor/jquery.min.js"></script> -->
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="js/vendor/swiper-bundle.min.js"></script>
 <script src="js/vendor/isotope.pkgd.min.js"></script>
