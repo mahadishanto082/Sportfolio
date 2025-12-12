@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+    <!-- <style>
     /* Light Mode */
     body.light-mode {
         background-color: #ffffff !important;
@@ -21,7 +21,7 @@
         background-color: #000000 !important;
         color: #ffffff !important;
     }
-</style>
+</style> -->
 </head>
 <body>
     <!-- Header / Navbar -->
@@ -46,7 +46,7 @@
 
     <!-- JS -->
     <script src="{{ asset('js/main.js') }}"></script>
-  <script>
+  <!-- <script>
     // Theme Switch Functionality
 console.log('Theme switcher loaded!');
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-  </script>
+  </script> -->
 
 </body>
 </html>
