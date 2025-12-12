@@ -235,6 +235,22 @@
 
 /* Extra small devices */
 @media (max-width: 575.98px) {
+
+    footer,
+    .footer,
+    .footer-container,
+    footer .container,
+    footer * {
+        background-color: #0A0A0A !important;
+        color: #ffffff !important;
+    }
+
+    /* Footer links white */
+    footer a,
+    .footer a {
+        color: #ffffff !important;
+    }
+}
     .title-heading-banner {
         font-size: 22px !important;
     }
