@@ -15,11 +15,6 @@
     /* Transparent backgrounds for content */
     .container,
     .section,
-    /* .card,
-    .card-service,
-    .card-chooseus,
-    .card-portfolio,
-    .card-blog, */
     .hero-container,
     .content-section,
     .chooseus-content-container,
@@ -27,29 +22,13 @@
         background-color: transparent !important;
         color: #ffffff !important;
     }
-    /* Footer dark background and white text */
-.footer {
-    background-color: #0A0A0A !important;
-    color: #ffffff !important;
-}
 
-/* Make all footer links white */
-.footer a {
-    color: #ffffff !important;
-}
-
-/* Optional: make all footer text inside span, p, li white */
-.footer * {
-    color: #ffffff !important;
-}
-
-
-    /* Header & Sidebar dark */
+    /* Header, Sidebar & Footer dark */
     header,
     .navbar,
     .navbar-nav,
     .navbar-collapse,
-   
+    .footer,
     .sidebar,
     .mobile-sidebar,
     .offcanvas,
@@ -65,6 +44,12 @@
     .offcanvas a,
     .offcanvas .nav-link,
     .offcanvas .nav-item a {
+        color: #ffffff !important;
+    }
+
+    /* Footer links/text white */
+    .footer a,
+    .footer * {
         color: #ffffff !important;
     }
 
@@ -269,6 +254,7 @@
     }
 }
 </style>
+
 
 @php
     $title = DB::table('titlepages')->first();
