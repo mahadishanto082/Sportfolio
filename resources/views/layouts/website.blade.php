@@ -97,16 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
   </script> -->
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const footer = document.querySelector('.section-footer');
-        if (footer) {
-            footer.style.backgroundColor = '#0A0A0A';
-            footer.style.color = '#ffffff';
-            footer.querySelectorAll('a').forEach(a => a.style.color = '#ffffff');
-        }
-    });
-</script>
+  
 
 
 </body>
