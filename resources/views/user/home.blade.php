@@ -236,18 +236,20 @@
 /* Extra small devices */
 @media (max-width: 575.98px) {
 
-    footer,
-    .footer,
-    .footer-container,
-    footer .container,
-    footer * {
+    .section-footer,
+    .section-footer .bg-footer-wrapper,
+    .section-footer .bg-footer,
+    .section-footer .hero-container {
         background-color: #0A0A0A !important;
         color: #ffffff !important;
     }
 
     /* Footer links white */
-    footer a,
-    .footer a {
+    .section-footer a,
+    .section-footer .footer-list a,
+    .section-footer .contact-list a,
+    .section-footer .legal-link,
+    .section-footer * {
         color: #ffffff !important;
     }
 }
