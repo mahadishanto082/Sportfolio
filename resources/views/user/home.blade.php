@@ -15,6 +15,11 @@
     /* Transparent backgrounds for content */
     .container,
     .section,
+    /* .card,
+    .card-service,
+    .card-chooseus,
+    .card-portfolio,
+    .card-blog, */
     .hero-container,
     .content-section,
     .chooseus-content-container,
@@ -23,12 +28,12 @@
         color: #ffffff !important;
     }
 
-    /* Header, Sidebar & Footer dark */
+    /* Header & Sidebar dark */
     header,
     .navbar,
     .navbar-nav,
     .navbar-collapse,
-    .footer,
+   
     .sidebar,
     .mobile-sidebar,
     .offcanvas,
@@ -46,8 +51,6 @@
     .offcanvas .nav-item a {
         color: #ffffff !important;
     }
-
-    /* Footer links/text white */
 
     /* Banner fixes */
     .title-heading-banner {
@@ -231,11 +234,25 @@
 
 /* Extra small devices */
 @media (max-width: 575.98px) {
+    .title-heading-banner {
+        font-size: 22px !important;
+    }
 
+    .title-heading {
+        font-size: 24px !important;
+    }
+
+    .card-chooseus {
+        width: 100% !important;
+        min-height: 180px !important;
+        padding: 15px !important;
+    }
+
+    .section {
+        padding: 30px 0 !important;
+    }
 }
-
 </style>
-
 
 @php
     $title = DB::table('titlepages')->first();
