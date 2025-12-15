@@ -2,7 +2,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-class Titlepage extends Model
+class TitlePage extends Model
 {
     use HasFactory;
 
